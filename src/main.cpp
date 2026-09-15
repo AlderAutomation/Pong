@@ -20,10 +20,14 @@
 
 #include <iostream>
 
+#include "Entity.hpp"
 
 int main () {
 
-	std::cout << "Hello World\n"; 
+	std::cout << "\n\nHello World\n"; 
 
-	return 0; 
+	Entity ball(5, 5); 
+	ball.printStatus(); 
+
+	return 0;
 }

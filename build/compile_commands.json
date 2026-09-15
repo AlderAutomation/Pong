@@ -4,5 +4,11 @@
   "command": "/usr/bin/c++  -I\"/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/include\" -std=gnu++23 -o CMakeFiles/main.dir/src/main.cpp.o -c \"/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/src/main.cpp\"",
   "file": "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/src/main.cpp",
   "output": "CMakeFiles/main.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/build",
+  "command": "/usr/bin/c++  -I\"/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/include\" -std=gnu++23 -o CMakeFiles/main.dir/src/Entity.cpp.o -c \"/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/src/Entity.cpp\"",
+  "file": "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/src/Entity.cpp",
+  "output": "CMakeFiles/main.dir/src/Entity.cpp.o"
 }
 ]

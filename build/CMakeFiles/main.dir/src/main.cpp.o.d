@@ -162,4 +162,5 @@ CMakeFiles/main.dir/src/main.cpp.o: \
  /usr/include/c++/16/bits/unicode-data.h \
  /usr/include/c++/16/bits/ostream_print.h \
  /usr/include/c++/16/bits/ostream.tcc /usr/include/c++/16/istream \
- /usr/include/c++/16/bits/istream.tcc
+ /usr/include/c++/16/bits/istream.tcc \
+ /home/picard/Nextcloud/06\ -\ Code/2026/Cpp/Ponger/include/Entity.hpp
