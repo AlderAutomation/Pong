@@ -10,5 +10,11 @@
   "command": "/usr/bin/c++  -I\"/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/include\" -std=gnu++23 -o CMakeFiles/main.dir/src/Entity.cpp.o -c \"/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/src/Entity.cpp\"",
   "file": "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/src/Entity.cpp",
   "output": "CMakeFiles/main.dir/src/Entity.cpp.o"
+},
+{
+  "directory": "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/build",
+  "command": "/usr/bin/c++  -I\"/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/include\" -std=gnu++23 -o CMakeFiles/main.dir/src/Paddle.cpp.o -c \"/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/src/Paddle.cpp\"",
+  "file": "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/src/Paddle.cpp",
+  "output": "CMakeFiles/main.dir/src/Paddle.cpp.o"
 }
 ]

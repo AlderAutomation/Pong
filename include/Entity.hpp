@@ -26,5 +26,5 @@ public:
 
 	// Functions 
 	void draw(); 
-	void printStatus(); 
+	virtual void printStatus(); 
 };

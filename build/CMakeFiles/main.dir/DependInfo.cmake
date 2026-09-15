@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/src/Entity.cpp" "CMakeFiles/main.dir/src/Entity.cpp.o" "gcc" "CMakeFiles/main.dir/src/Entity.cpp.o.d"
+  "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/src/Paddle.cpp" "CMakeFiles/main.dir/src/Paddle.cpp.o" "gcc" "CMakeFiles/main.dir/src/Paddle.cpp.o.d"
   "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/src/main.cpp" "CMakeFiles/main.dir/src/main.cpp.o" "gcc" "CMakeFiles/main.dir/src/main.cpp.o.d"
   "" "main" "gcc" "CMakeFiles/main.dir/link.d"
   )

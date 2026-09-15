@@ -21,13 +21,20 @@
 #include <iostream>
 
 #include "Entity.hpp"
+#include "Paddle.hpp"
+
 
 int main () {
 
 	std::cout << "\n\nHello World\n"; 
 
 	Entity ball(5, 5); 
+	std::cout << "Ball Entity: \n";
 	ball.printStatus(); 
+
+	Paddle playerOne; 
+	std::cout << "Player one Entity: \n";
+	playerOne.printStatus(); 
 
 	return 0;
 }
