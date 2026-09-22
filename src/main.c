@@ -18,8 +18,8 @@
 //
 
 
-#include <stdio.h>
 #include <raylib.h>
+#include <stdio.h>
 
 #include "Entity.h"
 #include "Paddle.h"
@@ -64,10 +64,23 @@ int main () {
 		BeginDrawing(); 
 
 		ClearBackground(BLACK); 
+		
+		char playerOneScoreText[50]; 
+		snprintf(playerOneScoreText, sizeof(playerOneScoreText), "Player One Score: %d", playerOne.score);
+		DrawText(playerOneScoreText, 10, 10, 30, RAYWHITE); 
 
+		char playerTwoScoreText[50]; 
+		snprintf(playerTwoScoreText, sizeof(playerTwoScoreText), "Player Two Score: %d", playerTwo.score);
+		DrawText(playerTwoScoreText, 410, 10, 30, RAYWHITE); 
+		
 		DrawRectangle(playerOne.entity.x, playerOne.entity.y, playerOne.width, playerOne.height, RAYWHITE); 
 		DrawRectangle(playerTwo.entity.x, playerTwo.entity.y, playerTwo.width, playerOne.height, RAYWHITE); 
 		DrawCircle(ball.entity.x, ball.entity.y, ball.radius, RAYWHITE); 
+
+		DrawLine(0, 50, 800, 50, RAYWHITE); // horizantal to sperate score from game 
+		DrawLine(400, 0, 400, 600, RAYWHITE); // vertical for center court
+		DrawLine(0, 599, 800, 599, RAYWHITE); // vertical to give visual bounds of court
+
 
 		EndDrawing(); 
 	}
