@@ -4,6 +4,7 @@
 // Paddle header file 
 
 #include <stdio.h>
+#include <raylib.h>
 
 #include "Paddle.h"
 #include "Entity.h"
@@ -12,9 +13,8 @@
 void paddleInit(Paddle *paddle) {
 	paddle->width = 0; 
 	paddle->height = 0; 
-	paddle->upControl = 'w'; 
-	paddle->downControl = 's'; 
 	paddle->score = 0; 
+	paddle->speed = 0.0; 
 }
 
 
@@ -23,14 +23,35 @@ void updateScore(Paddle *paddle, int score) {
 }
 
 
+void movePaddle(Paddle *paddle, int upKey, int downKey) {
+	// movement 
+	if (IsKeyDown(upKey)) {
+		paddle->entity.y -= paddle->speed; 
+	}
+
+	if (IsKeyDown(downKey)) {
+		paddle->entity.y += paddle->speed; 
+	}
+
+	// window boundaries
+	if (paddle->entity.y < 50) {
+		paddle->entity.y = 50; 
+	}
+
+	if (paddle->entity.y + paddle->height > GetScreenHeight()) {
+		paddle->entity.y = GetScreenHeight()-paddle->height; 
+	}
+
+}
+
+
+
 void paddlePrintStatus(Paddle *paddle) {
-	printf("POS X: %i\nPOS Y: %i\nWidth: %i\nHeight: %i\nControls: %c, %c\nScore: %i\n",
+	printf("POS X,Y: %i, %i\nWidth: %i\nHeight: %i\nScore: %i\n",
 			paddle->entity.x, 
 			paddle->entity.y, 
 			paddle->width, 
 			paddle->height, 
-			paddle->upControl, 
-			paddle->downControl, 
 			paddle->score); 
 }
 

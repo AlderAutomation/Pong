@@ -31,6 +31,7 @@ int main () {
 	const int PADDLE_WIDTH = 10; 
 	const int PADDLE_HEIGHT = 100; 
 	const int PADDLE_OFFSET = 10;
+	const float PADDLE_SPEED = 10.0; 
 
 	const int WIN_WIDTH = 800; 
 	const int WIN_HEIGHT = 600; 
@@ -44,23 +45,24 @@ int main () {
 	Paddle playerOne; 
 	playerOne.entity.x = PADDLE_OFFSET;
 	playerOne.entity.y = (WIN_HEIGHT/2)-(PADDLE_HEIGHT/2);
-	playerOne.upControl = 'w'; 
-	playerOne.downControl = 's'; 
 	playerOne.width = PADDLE_WIDTH; 
 	playerOne.height = PADDLE_HEIGHT; 
+	playerOne.speed = PADDLE_SPEED; 
 
 	Paddle playerTwo; 
 	playerTwo.entity.x = WIN_WIDTH - (PADDLE_OFFSET+PADDLE_WIDTH); 
 	playerTwo.entity.y = (WIN_HEIGHT/2)-(PADDLE_HEIGHT/2);
-	playerTwo.upControl = 'i';
-	playerTwo.downControl = 'k';
 	playerTwo.width = PADDLE_WIDTH; 
 	playerTwo.height = PADDLE_HEIGHT; 
+	playerTwo.speed = PADDLE_SPEED; 
 
 	InitWindow(WIN_WIDTH, WIN_HEIGHT, "Ponger!"); 
+	SetTargetFPS(30); 
 
 	while (!WindowShouldClose()) {
-		
+		movePaddle(&playerOne, KEY_W, KEY_S); 
+		movePaddle(&playerTwo, KEY_I, KEY_J); 
+
 		BeginDrawing(); 
 
 		ClearBackground(BLACK); 
