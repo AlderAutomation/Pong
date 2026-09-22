@@ -1,3 +1,3 @@
-/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/build/CMakeFiles/main.dir
-/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/build/CMakeFiles/edit_cache.dir
-/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/build/CMakeFiles/rebuild_cache.dir
+/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/build/CMakeFiles/main.dir
+/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/build/CMakeFiles/edit_cache.dir
+/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/build/CMakeFiles/rebuild_cache.dir

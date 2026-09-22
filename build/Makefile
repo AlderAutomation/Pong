@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger"
+CMAKE_SOURCE_DIR = "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/build"
+CMAKE_BINARY_DIR = "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,16 +87,16 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/build/CMakeFiles" "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/build//CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/build/CMakeFiles" "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/build//CMakeFiles/progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/build/CMakeFiles" 0
 .PHONY : all
 
 # The main codegen target
 codegen: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/build/CMakeFiles" "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/build//CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/build/CMakeFiles" "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/build//CMakeFiles/progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 codegen
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/build/CMakeFiles" 0
 .PHONY : codegen
 
 # The main clean target
@@ -136,77 +136,101 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-src/Entity.o: src/Entity.cpp.o
+src/Ball.o: src/Ball.c.o
+.PHONY : src/Ball.o
+
+# target to build an object file
+src/Ball.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Ball.c.o
+.PHONY : src/Ball.c.o
+
+src/Ball.i: src/Ball.c.i
+.PHONY : src/Ball.i
+
+# target to preprocess a source file
+src/Ball.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Ball.c.i
+.PHONY : src/Ball.c.i
+
+src/Ball.s: src/Ball.c.s
+.PHONY : src/Ball.s
+
+# target to generate assembly for a file
+src/Ball.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Ball.c.s
+.PHONY : src/Ball.c.s
+
+src/Entity.o: src/Entity.c.o
 .PHONY : src/Entity.o
 
 # target to build an object file
-src/Entity.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Entity.cpp.o
-.PHONY : src/Entity.cpp.o
+src/Entity.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Entity.c.o
+.PHONY : src/Entity.c.o
 
-src/Entity.i: src/Entity.cpp.i
+src/Entity.i: src/Entity.c.i
 .PHONY : src/Entity.i
 
 # target to preprocess a source file
-src/Entity.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Entity.cpp.i
-.PHONY : src/Entity.cpp.i
+src/Entity.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Entity.c.i
+.PHONY : src/Entity.c.i
 
-src/Entity.s: src/Entity.cpp.s
+src/Entity.s: src/Entity.c.s
 .PHONY : src/Entity.s
 
 # target to generate assembly for a file
-src/Entity.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Entity.cpp.s
-.PHONY : src/Entity.cpp.s
+src/Entity.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Entity.c.s
+.PHONY : src/Entity.c.s
 
-src/Paddle.o: src/Paddle.cpp.o
+src/Paddle.o: src/Paddle.c.o
 .PHONY : src/Paddle.o
 
 # target to build an object file
-src/Paddle.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Paddle.cpp.o
-.PHONY : src/Paddle.cpp.o
+src/Paddle.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Paddle.c.o
+.PHONY : src/Paddle.c.o
 
-src/Paddle.i: src/Paddle.cpp.i
+src/Paddle.i: src/Paddle.c.i
 .PHONY : src/Paddle.i
 
 # target to preprocess a source file
-src/Paddle.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Paddle.cpp.i
-.PHONY : src/Paddle.cpp.i
+src/Paddle.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Paddle.c.i
+.PHONY : src/Paddle.c.i
 
-src/Paddle.s: src/Paddle.cpp.s
+src/Paddle.s: src/Paddle.c.s
 .PHONY : src/Paddle.s
 
 # target to generate assembly for a file
-src/Paddle.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Paddle.cpp.s
-.PHONY : src/Paddle.cpp.s
+src/Paddle.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Paddle.c.s
+.PHONY : src/Paddle.c.s
 
-src/main.o: src/main.cpp.o
+src/main.o: src/main.c.o
 .PHONY : src/main.o
 
 # target to build an object file
-src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+src/main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.c.o
+.PHONY : src/main.c.o
 
-src/main.i: src/main.cpp.i
+src/main.i: src/main.c.i
 .PHONY : src/main.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+src/main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.c.i
+.PHONY : src/main.c.i
 
-src/main.s: src/main.cpp.s
+src/main.s: src/main.c.s
 .PHONY : src/main.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+src/main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.c.s
+.PHONY : src/main.c.s
 
 # Help Target
 help:
@@ -218,6 +242,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... main"
+	@echo "... src/Ball.o"
+	@echo "... src/Ball.i"
+	@echo "... src/Ball.s"
 	@echo "... src/Entity.o"
 	@echo "... src/Entity.i"
 	@echo "... src/Entity.s"

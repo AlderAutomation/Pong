@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger"
+CMAKE_SOURCE_DIR = "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/build"
+CMAKE_BINARY_DIR = "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/build"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/main.dir/depend.make
@@ -72,64 +72,81 @@ include CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/codegen:
 .PHONY : CMakeFiles/main.dir/codegen
 
-CMakeFiles/main.dir/src/main.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/main.cpp.o: /home/picard/Nextcloud/06\ -\ Code/2026/Cpp/Ponger/src/main.cpp
-CMakeFiles/main.dir/src/main.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/main.cpp.o -MF CMakeFiles/main.dir/src/main.cpp.o.d -o CMakeFiles/main.dir/src/main.cpp.o -c "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/src/main.cpp"
+CMakeFiles/main.dir/src/main.c.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/main.c.o: /home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/src/main.c
+CMakeFiles/main.dir/src/main.c.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/main.dir/src/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/main.c.o -MF CMakeFiles/main.dir/src/main.c.o.d -o CMakeFiles/main.dir/src/main.c.o -c "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/src/main.c"
 
-CMakeFiles/main.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/src/main.cpp" > CMakeFiles/main.dir/src/main.cpp.i
+CMakeFiles/main.dir/src/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/main.dir/src/main.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/src/main.c" > CMakeFiles/main.dir/src/main.c.i
 
-CMakeFiles/main.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/src/main.cpp" -o CMakeFiles/main.dir/src/main.cpp.s
+CMakeFiles/main.dir/src/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/src/main.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/src/main.c" -o CMakeFiles/main.dir/src/main.c.s
 
-CMakeFiles/main.dir/src/Entity.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/Entity.cpp.o: /home/picard/Nextcloud/06\ -\ Code/2026/Cpp/Ponger/src/Entity.cpp
-CMakeFiles/main.dir/src/Entity.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/src/Entity.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/Entity.cpp.o -MF CMakeFiles/main.dir/src/Entity.cpp.o.d -o CMakeFiles/main.dir/src/Entity.cpp.o -c "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/src/Entity.cpp"
+CMakeFiles/main.dir/src/Entity.c.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/Entity.c.o: /home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/src/Entity.c
+CMakeFiles/main.dir/src/Entity.c.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/main.dir/src/Entity.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/Entity.c.o -MF CMakeFiles/main.dir/src/Entity.c.o.d -o CMakeFiles/main.dir/src/Entity.c.o -c "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/src/Entity.c"
 
-CMakeFiles/main.dir/src/Entity.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/Entity.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/src/Entity.cpp" > CMakeFiles/main.dir/src/Entity.cpp.i
+CMakeFiles/main.dir/src/Entity.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/main.dir/src/Entity.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/src/Entity.c" > CMakeFiles/main.dir/src/Entity.c.i
 
-CMakeFiles/main.dir/src/Entity.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/Entity.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/src/Entity.cpp" -o CMakeFiles/main.dir/src/Entity.cpp.s
+CMakeFiles/main.dir/src/Entity.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/src/Entity.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/src/Entity.c" -o CMakeFiles/main.dir/src/Entity.c.s
 
-CMakeFiles/main.dir/src/Paddle.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/Paddle.cpp.o: /home/picard/Nextcloud/06\ -\ Code/2026/Cpp/Ponger/src/Paddle.cpp
-CMakeFiles/main.dir/src/Paddle.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/src/Paddle.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/Paddle.cpp.o -MF CMakeFiles/main.dir/src/Paddle.cpp.o.d -o CMakeFiles/main.dir/src/Paddle.cpp.o -c "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/src/Paddle.cpp"
+CMakeFiles/main.dir/src/Paddle.c.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/Paddle.c.o: /home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/src/Paddle.c
+CMakeFiles/main.dir/src/Paddle.c.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/main.dir/src/Paddle.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/Paddle.c.o -MF CMakeFiles/main.dir/src/Paddle.c.o.d -o CMakeFiles/main.dir/src/Paddle.c.o -c "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/src/Paddle.c"
 
-CMakeFiles/main.dir/src/Paddle.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/Paddle.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/src/Paddle.cpp" > CMakeFiles/main.dir/src/Paddle.cpp.i
+CMakeFiles/main.dir/src/Paddle.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/main.dir/src/Paddle.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/src/Paddle.c" > CMakeFiles/main.dir/src/Paddle.c.i
 
-CMakeFiles/main.dir/src/Paddle.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/Paddle.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/src/Paddle.cpp" -o CMakeFiles/main.dir/src/Paddle.cpp.s
+CMakeFiles/main.dir/src/Paddle.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/src/Paddle.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/src/Paddle.c" -o CMakeFiles/main.dir/src/Paddle.c.s
+
+CMakeFiles/main.dir/src/Ball.c.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/Ball.c.o: /home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/src/Ball.c
+CMakeFiles/main.dir/src/Ball.c.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/main.dir/src/Ball.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/Ball.c.o -MF CMakeFiles/main.dir/src/Ball.c.o.d -o CMakeFiles/main.dir/src/Ball.c.o -c "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/src/Ball.c"
+
+CMakeFiles/main.dir/src/Ball.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/main.dir/src/Ball.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/src/Ball.c" > CMakeFiles/main.dir/src/Ball.c.i
+
+CMakeFiles/main.dir/src/Ball.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/src/Ball.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/src/Ball.c" -o CMakeFiles/main.dir/src/Ball.c.s
 
 # Object files for target main
 main_OBJECTS = \
-"CMakeFiles/main.dir/src/main.cpp.o" \
-"CMakeFiles/main.dir/src/Entity.cpp.o" \
-"CMakeFiles/main.dir/src/Paddle.cpp.o"
+"CMakeFiles/main.dir/src/main.c.o" \
+"CMakeFiles/main.dir/src/Entity.c.o" \
+"CMakeFiles/main.dir/src/Paddle.c.o" \
+"CMakeFiles/main.dir/src/Ball.c.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
-main: CMakeFiles/main.dir/src/main.cpp.o
-main: CMakeFiles/main.dir/src/Entity.cpp.o
-main: CMakeFiles/main.dir/src/Paddle.cpp.o
+main: CMakeFiles/main.dir/src/main.c.o
+main: CMakeFiles/main.dir/src/Entity.c.o
+main: CMakeFiles/main.dir/src/Paddle.c.o
+main: CMakeFiles/main.dir/src/Ball.c.o
 main: CMakeFiles/main.dir/build.make
 main: CMakeFiles/main.dir/compiler_depend.ts
+main: /usr/lib64/libraylib.so
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -141,6 +158,6 @@ CMakeFiles/main.dir/clean:
 .PHONY : CMakeFiles/main.dir/clean
 
 CMakeFiles/main.dir/depend:
-	cd "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger" "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger" "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/build" "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/build" "/home/picard/Nextcloud/06 - Code/2026/Cpp/Ponger/build/CMakeFiles/main.dir/DependInfo.cmake" "--color=$(COLOR)" main
+	cd "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger" "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger" "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/build" "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/build" "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/build/CMakeFiles/main.dir/DependInfo.cmake" "--color=$(COLOR)" main
 .PHONY : CMakeFiles/main.dir/depend
 
