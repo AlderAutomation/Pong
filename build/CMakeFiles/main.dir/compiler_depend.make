@@ -4,7 +4,11 @@
 CMakeFiles/main.dir/src/Ball.c.o: /home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/src/Ball.c \
   /home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/include/Ball.h \
   /home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/include/Entity.h \
-  /usr/include/stdc-predef.h
+  /home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/include/Paddle.h \
+  /usr/include/raylib.h \
+  /usr/include/stdc-predef.h \
+  /usr/lib/gcc/x86_64-redhat-linux/16/include/stdarg.h \
+  /usr/lib/gcc/x86_64-redhat-linux/16/include/stdbool.h
 
 CMakeFiles/main.dir/src/Entity.c.o: /home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/src/Entity.c \
   /home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/include/Entity.h \
@@ -71,11 +75,14 @@ CMakeFiles/main.dir/src/main.c.o: /home/picard/MyCloud/06\ -\ Code/2026/Cpp/Pong
   /home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/include/Ball.h \
   /home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/include/Entity.h \
   /home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/include/Paddle.h \
+  /usr/include/bits/endian.h \
+  /usr/include/bits/endianness.h \
   /usr/include/bits/floatn-common.h \
   /usr/include/bits/floatn.h \
   /usr/include/bits/libc-header-start.h \
   /usr/include/bits/long-double.h \
   /usr/include/bits/stdio_lim.h \
+  /usr/include/bits/time.h \
   /usr/include/bits/time64.h \
   /usr/include/bits/timesize.h \
   /usr/include/bits/types.h \
@@ -83,9 +90,18 @@ CMakeFiles/main.dir/src/main.c.o: /home/picard/MyCloud/06\ -\ Code/2026/Cpp/Pong
   /usr/include/bits/types/__FILE.h \
   /usr/include/bits/types/__fpos64_t.h \
   /usr/include/bits/types/__fpos_t.h \
+  /usr/include/bits/types/__locale_t.h \
   /usr/include/bits/types/__mbstate_t.h \
+  /usr/include/bits/types/clock_t.h \
+  /usr/include/bits/types/clockid_t.h \
   /usr/include/bits/types/cookie_io_functions_t.h \
+  /usr/include/bits/types/locale_t.h \
   /usr/include/bits/types/struct_FILE.h \
+  /usr/include/bits/types/struct_itimerspec.h \
+  /usr/include/bits/types/struct_timespec.h \
+  /usr/include/bits/types/struct_tm.h \
+  /usr/include/bits/types/time_t.h \
+  /usr/include/bits/types/timer_t.h \
   /usr/include/bits/typesizes.h \
   /usr/include/bits/wordsize.h \
   /usr/include/features-time64.h \
@@ -96,6 +112,7 @@ CMakeFiles/main.dir/src/main.c.o: /home/picard/MyCloud/06\ -\ Code/2026/Cpp/Pong
   /usr/include/stdc-predef.h \
   /usr/include/stdio.h \
   /usr/include/sys/cdefs.h \
+  /usr/include/time.h \
   /usr/lib/gcc/x86_64-redhat-linux/16/include/stdarg.h \
   /usr/lib/gcc/x86_64-redhat-linux/16/include/stdbool.h \
   /usr/lib/gcc/x86_64-redhat-linux/16/include/stddef.h
@@ -124,116 +141,142 @@ main: /lib64/ld-linux-x86-64.so.2 \
   CMakeFiles/main.dir/src/main.c.o
 
 
-CMakeFiles/main.dir/src/Paddle.c.o:
-
-CMakeFiles/main.dir/src/Entity.c.o:
-
-/usr/lib64/libm.so.6:
-
-/usr/lib64/libc_nonshared.a:
-
-/usr/lib64/libc.so:
-
-/usr/lib/gcc/x86_64-redhat-linux/16/libgcc_s_asneeded.so:
-
-/usr/lib/gcc/x86_64-redhat-linux/16/libatomic_asneeded.so:
-
-/usr/lib/gcc/x86_64-redhat-linux/16/libgcc_s.so:
-
-/usr/lib64/crtn.o:
-
-/usr/lib64/crt1.o:
-
-/usr/lib/gcc/x86_64-redhat-linux/16/libgcc.a:
-
-/home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/src/main.c:
-
-/lib64/ld-linux-x86-64.so.2:
-
-/usr/lib/gcc/x86_64-redhat-linux/16/include/stdbool.h:
-
-/usr/include/raylib.h:
-
-/home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/include/Paddle.h:
-
-CMakeFiles/main.dir/src/Ball.c.o:
-
-/home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/src/Paddle.c:
-
-/usr/lib/gcc/x86_64-redhat-linux/16/include/stddef.h:
-
-/usr/include/gnu/stubs-64.h:
-
-/usr/include/bits/floatn.h:
-
-/usr/include/bits/types/__mbstate_t.h:
-
-/usr/include/bits/long-double.h:
-
 CMakeFiles/main.dir/src/main.c.o:
 
-/usr/lib64/libatomic.so.1.2.0:
-
-/usr/include/bits/floatn-common.h:
+CMakeFiles/main.dir/src/Paddle.c.o:
 
 /usr/lib64/libraylib.so:
 
-/usr/include/bits/types.h:
+/usr/lib64/libatomic.so.1.2.0:
 
-/home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/src/Entity.c:
+/usr/lib/gcc/x86_64-redhat-linux/16/libgcc_s_asneeded.so:
 
-/lib64/libc.so.6:
+/usr/lib/gcc/x86_64-redhat-linux/16/libgcc_s.so:
 
-/usr/include/bits/time64.h:
+/usr/include/features.h:
 
-/home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/include/Entity.h:
+/usr/include/bits/types/struct_FILE.h:
 
-/usr/lib/gcc/x86_64-redhat-linux/16/libatomic.so:
+/usr/include/bits/types/cookie_io_functions_t.h:
 
-/usr/lib/gcc/x86_64-redhat-linux/16/crtend.o:
+/usr/include/bits/typesizes.h:
 
-/usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o:
-
-/lib64/libgcc_s.so.1:
-
-/usr/include/bits/stdio_lim.h:
-
-/usr/lib64/crti.o:
-
-/usr/include/bits/libc-header-start.h:
-
-/home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/include/Ball.h:
+/usr/include/features-time64.h:
 
 /usr/include/bits/types/FILE.h:
 
+CMakeFiles/main.dir/src/Ball.c.o:
+
 /usr/include/bits/types/__FILE.h:
 
-/home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/src/Ball.c:
+/usr/lib64/libm.so.6:
+
+/home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/include/Ball.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/time.h:
 
 /usr/include/bits/wordsize.h:
 
 /usr/include/bits/types/__fpos_t.h:
 
-/usr/include/bits/types/__fpos64_t.h:
+/usr/include/bits/stdio_lim.h:
 
-/usr/include/features-time64.h:
+/lib64/libgcc_s.so.1:
 
-/usr/lib/gcc/x86_64-redhat-linux/16/include/stdarg.h:
+/usr/lib64/libc_nonshared.a:
 
-/usr/include/bits/typesizes.h:
+/usr/lib/gcc/x86_64-redhat-linux/16/crtbegin.o:
 
-/usr/include/bits/types/cookie_io_functions_t.h:
-
-/usr/include/bits/types/struct_FILE.h:
-
-/usr/include/features.h:
-
-/usr/include/gnu/stubs.h:
-
-/usr/include/stdio.h:
-
-/usr/include/bits/timesize.h:
+/usr/lib/gcc/x86_64-redhat-linux/16/libatomic.so:
 
 /usr/include/stdc-predef.h:
 
+CMakeFiles/main.dir/src/Entity.c.o:
+
 /usr/include/sys/cdefs.h:
+
+/usr/include/bits/types/__fpos64_t.h:
+
+/home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/src/Ball.c:
+
+/usr/include/raylib.h:
+
+/lib64/ld-linux-x86-64.so.2:
+
+/usr/include/bits/libc-header-start.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/16/crtend.o:
+
+/usr/lib64/crti.o:
+
+/home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/include/Entity.h:
+
+/usr/include/bits/floatn-common.h:
+
+/usr/include/bits/long-double.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/16/include/stdarg.h:
+
+/usr/include/bits/types/__mbstate_t.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/bits/types/timer_t.h:
+
+/usr/include/stdio.h:
+
+/usr/include/gnu/stubs-64.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/16/include/stddef.h:
+
+/home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/src/Paddle.c:
+
+/usr/lib64/libc.so:
+
+/usr/include/bits/time64.h:
+
+/home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/src/main.c:
+
+/usr/include/bits/floatn.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/16/libgcc.a:
+
+/usr/include/bits/timesize.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/bits/types/struct_itimerspec.h:
+
+/usr/include/bits/endianness.h:
+
+/home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/include/Paddle.h:
+
+/usr/include/bits/types/__locale_t.h:
+
+/usr/include/bits/types/clock_t.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/16/include/stdbool.h:
+
+/usr/lib64/crt1.o:
+
+/lib64/libc.so.6:
+
+/usr/include/bits/types/locale_t.h:
+
+/usr/include/bits/types/struct_timespec.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/16/libatomic_asneeded.so:
+
+/usr/include/bits/types/struct_tm.h:
+
+/usr/include/bits/types/time_t.h:
+
+/usr/include/time.h:
+
+/home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/src/Entity.c:
+
+/usr/include/bits/types/clockid_t.h:
+
+/usr/lib64/crtn.o:

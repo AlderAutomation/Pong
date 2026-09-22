@@ -16,8 +16,16 @@ CMakeFiles/main.dir/src/main.c.o: \
  /usr/include/bits/types/FILE.h /usr/include/bits/types/struct_FILE.h \
  /usr/include/bits/types/cookie_io_functions_t.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/floatn.h \
- /usr/include/bits/floatn-common.h \
+ /usr/include/bits/floatn-common.h /usr/include/time.h \
+ /usr/include/bits/time.h /usr/include/bits/types/clock_t.h \
+ /usr/include/bits/types/time_t.h /usr/include/bits/types/struct_tm.h \
+ /usr/include/bits/types/struct_timespec.h /usr/include/bits/endian.h \
+ /usr/include/bits/endianness.h /usr/include/bits/types/clockid_t.h \
+ /usr/include/bits/types/timer_t.h \
+ /usr/include/bits/types/struct_itimerspec.h \
+ /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
  /home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/include/Entity.h \
  /home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/include/Paddle.h \
  /home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/include/Entity.h \
- /home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/include/Ball.h
+ /home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/include/Ball.h \
+ /home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/include/Paddle.h

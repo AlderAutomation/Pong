@@ -20,6 +20,7 @@
 
 #include <raylib.h>
 #include <stdio.h>
+#include <time.h>
 
 #include "Entity.h"
 #include "Paddle.h"
@@ -36,11 +37,8 @@ int main () {
 	const int WIN_WIDTH = 800; 
 	const int WIN_HEIGHT = 600; 
 
-
 	Ball ball; 
-	ball.entity.x = 400; 
-	ball.entity.y = 300; 
-	ball.radius = 10; 
+	ballInit(&ball); 
 
 	Paddle playerOne; 
 	playerOne.entity.x = PADDLE_OFFSET;
@@ -56,12 +54,18 @@ int main () {
 	playerTwo.height = PADDLE_HEIGHT; 
 	playerTwo.speed = PADDLE_SPEED; 
 
+	SetRandomSeed(time(NULL)); 
+
 	InitWindow(WIN_WIDTH, WIN_HEIGHT, "Ponger!"); 
 	SetTargetFPS(30); 
 
 	while (!WindowShouldClose()) {
 		movePaddle(&playerOne, KEY_W, KEY_S); 
 		movePaddle(&playerTwo, KEY_I, KEY_J); 
+
+		moveBall(&ball); 
+		bounceBall(&ball);
+		checkScore(&ball, &playerOne, &playerTwo); 	
 
 		BeginDrawing(); 
 

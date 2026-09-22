@@ -3,10 +3,41 @@
 //
 // Ball 
 
+#include <raylib.h>
 
 #include "Ball.h"
-// #include "Entity.h"
+#include "Paddle.h"
 
-void ballInit(Ball *ball){
-	ball->radius = 40.0; 
+
+void ballInit(Ball *ball) {
+	ball->entity.x = 400; 
+	ball->entity.y = 300; 
+	ball->radius = 10.0; 
+
+	ball->speedX = GetRandomValue(-15, 15); 
+	ball->speedY = GetRandomValue(-15, 15); 
 }
+
+void moveBall(Ball *ball) {
+	ball->entity.x += ball->speedX; 
+	ball->entity.y += ball->speedY; 
+}
+
+void bounceBall(Ball *ball) {
+	if (ball->entity.y - ball->radius <= 50 || ball->entity.y + ball->radius >= GetScreenHeight()) {
+		ball->speedY *= -1; 
+	}
+}
+
+void checkScore(Ball *ball, Paddle *playerOne, Paddle *playerTwo) {
+	if (ball->entity.x <= 0) {
+		updateScore(playerTwo, 1); 
+		ballInit(ball); 
+	}
+
+	if (ball->entity.x >= GetScreenWidth()) {
+		updateScore(playerOne, 1); 
+		ballInit(ball); 
+	}
+}
+
