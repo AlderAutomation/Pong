@@ -1,5 +1,5 @@
 CMakeFiles/main.dir/src/Paddle.c.o: \
- /home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/src/Paddle.c \
+ /home/picard/MyCloud/06\ -\ Code/2026/C/Ponger/src/Paddle.c \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/bits/libc-header-start.h /usr/include/features.h \
  /usr/include/features-time64.h /usr/include/bits/wordsize.h \
@@ -17,6 +17,6 @@ CMakeFiles/main.dir/src/Paddle.c.o: \
  /usr/include/bits/stdio_lim.h /usr/include/bits/floatn.h \
  /usr/include/bits/floatn-common.h /usr/include/raylib.h \
  /usr/lib/gcc/x86_64-redhat-linux/16/include/stdbool.h \
- /home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/include/Paddle.h \
- /home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/include/Entity.h \
- /home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/include/Entity.h
+ /home/picard/MyCloud/06\ -\ Code/2026/C/Ponger/include/Paddle.h \
+ /home/picard/MyCloud/06\ -\ Code/2026/C/Ponger/include/Entity.h \
+ /home/picard/MyCloud/06\ -\ Code/2026/C/Ponger/include/Entity.h

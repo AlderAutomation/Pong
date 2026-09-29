@@ -10,3 +10,4 @@ activity:
   - type: created
     at: 2026-09-20T06:55:53.638Z
 ---
+As in someone has won, play again or go back to main menu. 

@@ -1,26 +1,26 @@
 [
 {
-  "directory": "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/build",
-  "command": "/usr/bin/cc  -I\"/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/include\" -I/usr/include -o CMakeFiles/main.dir/src/main.c.o -c \"/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/src/main.c\"",
-  "file": "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/src/main.c",
+  "directory": "/home/picard/MyCloud/06 - Code/2026/C/Ponger/build",
+  "command": "/usr/bin/cc  -I\"/home/picard/MyCloud/06 - Code/2026/C/Ponger/include\" -I/usr/include -o CMakeFiles/main.dir/src/main.c.o -c \"/home/picard/MyCloud/06 - Code/2026/C/Ponger/src/main.c\"",
+  "file": "/home/picard/MyCloud/06 - Code/2026/C/Ponger/src/main.c",
   "output": "CMakeFiles/main.dir/src/main.c.o"
 },
 {
-  "directory": "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/build",
-  "command": "/usr/bin/cc  -I\"/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/include\" -I/usr/include -o CMakeFiles/main.dir/src/Entity.c.o -c \"/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/src/Entity.c\"",
-  "file": "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/src/Entity.c",
+  "directory": "/home/picard/MyCloud/06 - Code/2026/C/Ponger/build",
+  "command": "/usr/bin/cc  -I\"/home/picard/MyCloud/06 - Code/2026/C/Ponger/include\" -I/usr/include -o CMakeFiles/main.dir/src/Entity.c.o -c \"/home/picard/MyCloud/06 - Code/2026/C/Ponger/src/Entity.c\"",
+  "file": "/home/picard/MyCloud/06 - Code/2026/C/Ponger/src/Entity.c",
   "output": "CMakeFiles/main.dir/src/Entity.c.o"
 },
 {
-  "directory": "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/build",
-  "command": "/usr/bin/cc  -I\"/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/include\" -I/usr/include -o CMakeFiles/main.dir/src/Paddle.c.o -c \"/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/src/Paddle.c\"",
-  "file": "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/src/Paddle.c",
+  "directory": "/home/picard/MyCloud/06 - Code/2026/C/Ponger/build",
+  "command": "/usr/bin/cc  -I\"/home/picard/MyCloud/06 - Code/2026/C/Ponger/include\" -I/usr/include -o CMakeFiles/main.dir/src/Paddle.c.o -c \"/home/picard/MyCloud/06 - Code/2026/C/Ponger/src/Paddle.c\"",
+  "file": "/home/picard/MyCloud/06 - Code/2026/C/Ponger/src/Paddle.c",
   "output": "CMakeFiles/main.dir/src/Paddle.c.o"
 },
 {
-  "directory": "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/build",
-  "command": "/usr/bin/cc  -I\"/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/include\" -I/usr/include -o CMakeFiles/main.dir/src/Ball.c.o -c \"/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/src/Ball.c\"",
-  "file": "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/src/Ball.c",
+  "directory": "/home/picard/MyCloud/06 - Code/2026/C/Ponger/build",
+  "command": "/usr/bin/cc  -I\"/home/picard/MyCloud/06 - Code/2026/C/Ponger/include\" -I/usr/include -o CMakeFiles/main.dir/src/Ball.c.o -c \"/home/picard/MyCloud/06 - Code/2026/C/Ponger/src/Ball.c\"",
+  "file": "/home/picard/MyCloud/06 - Code/2026/C/Ponger/src/Ball.c",
   "output": "CMakeFiles/main.dir/src/Ball.c.o"
 }
 ]

@@ -10,3 +10,10 @@ activity:
   - type: created
     at: 2026-09-20T06:56:02.801Z
 ---
+As in : 
+
+- [x] Paddle movement
+- [x] Ball movement 
+- [x] Score checking
+- [x] score keeping 
+- [ ] win coditions

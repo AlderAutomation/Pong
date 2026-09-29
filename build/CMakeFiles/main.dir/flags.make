@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I"/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/include"
+C_INCLUDES = -I"/home/picard/MyCloud/06 - Code/2026/C/Ponger/include"
 
 C_FLAGS = -I/usr/include
 

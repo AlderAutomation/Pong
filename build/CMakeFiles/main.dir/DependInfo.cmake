@@ -8,10 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/src/Ball.c" "CMakeFiles/main.dir/src/Ball.c.o" "gcc" "CMakeFiles/main.dir/src/Ball.c.o.d"
-  "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/src/Entity.c" "CMakeFiles/main.dir/src/Entity.c.o" "gcc" "CMakeFiles/main.dir/src/Entity.c.o.d"
-  "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/src/Paddle.c" "CMakeFiles/main.dir/src/Paddle.c.o" "gcc" "CMakeFiles/main.dir/src/Paddle.c.o.d"
-  "/home/picard/MyCloud/06 - Code/2026/Cpp/Ponger/src/main.c" "CMakeFiles/main.dir/src/main.c.o" "gcc" "CMakeFiles/main.dir/src/main.c.o.d"
+  "/home/picard/MyCloud/06 - Code/2026/C/Ponger/src/Ball.c" "CMakeFiles/main.dir/src/Ball.c.o" "gcc" "CMakeFiles/main.dir/src/Ball.c.o.d"
+  "/home/picard/MyCloud/06 - Code/2026/C/Ponger/src/Entity.c" "CMakeFiles/main.dir/src/Entity.c.o" "gcc" "CMakeFiles/main.dir/src/Entity.c.o.d"
+  "/home/picard/MyCloud/06 - Code/2026/C/Ponger/src/Paddle.c" "CMakeFiles/main.dir/src/Paddle.c.o" "gcc" "CMakeFiles/main.dir/src/Paddle.c.o.d"
+  "/home/picard/MyCloud/06 - Code/2026/C/Ponger/src/main.c" "CMakeFiles/main.dir/src/main.c.o" "gcc" "CMakeFiles/main.dir/src/main.c.o.d"
   "" "main" "gcc" "CMakeFiles/main.dir/link.d"
   )
 

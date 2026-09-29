@@ -1,5 +1,5 @@
 CMakeFiles/main.dir/src/Entity.c.o: \
- /home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/src/Entity.c \
+ /home/picard/MyCloud/06\ -\ Code/2026/C/Ponger/src/Entity.c \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/bits/libc-header-start.h /usr/include/features.h \
  /usr/include/features-time64.h /usr/include/bits/wordsize.h \
@@ -16,4 +16,4 @@ CMakeFiles/main.dir/src/Entity.c.o: \
  /usr/include/bits/types/cookie_io_functions_t.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/floatn.h \
  /usr/include/bits/floatn-common.h \
- /home/picard/MyCloud/06\ -\ Code/2026/Cpp/Ponger/include/Entity.h
+ /home/picard/MyCloud/06\ -\ Code/2026/C/Ponger/include/Entity.h
