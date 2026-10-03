@@ -55,3 +55,13 @@ void paddlePrintStatus(Paddle *paddle) {
 			paddle->score); 
 }
 
+
+void paddleReset(Paddle *paddle, int x, int y, int w, int h, float speed, int score) {
+	paddle->entity.x = x;
+	paddle->entity.y = y;
+	paddle->width = w; 
+	paddle->height = h; 
+	paddle->speed = speed; 
+	paddle->score = score; 
+
+}

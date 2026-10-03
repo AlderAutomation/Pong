@@ -23,13 +23,15 @@ typedef enum {
 	SCENE_OPTIONS
 } Scene;
 
+int whoWon = 0; 
+
 // Check win condition and return 0 to end game or 1 to continue game 
 int checkWin(Ball *ball, Paddle *playerOne, Paddle *playerTwo) {
 	if (playerOne->score == 3) {
-		printf("Player One wins\n"); 
+		whoWon = 1; 
 		return 0; 
 	} else if (playerTwo->score == 3) {
-		printf("Player two wins\n"); 
+		whoWon = 2; 
 		return 0; 
 	} else {
 		return 1;
@@ -48,29 +50,26 @@ int main () {
 
 	// Const Strings 
 	const char *TITLE = "PONG!";
-	const char *ONE_PLAYER = "Start One Player Game"; 
-	const char *TWO_PLAYER = "Start Two Player Game";
+	const char *ONE_PLAYER = "Start 1P Game"; 
+	const char *TWO_PLAYER = "Start 2P Game";
 	const char *OPTIONS = "Options menu";
 	const int FONT_SIZE = 30; 
+	const char *GAMEOVER = "Game Over!"; 
+	const char *P1_WINS = "Player 1 wins!";
+	const char *P2_WINS = "Player 2 wins!";
+	const char *RESTART = "Click anywhere to start over."; 
+
 
 	// Create the ball
 	Ball ball; 
 	ballInit(&ball); 
 
 	// Create the paddles/players 
-	Paddle playerOne; 
-	playerOne.entity.x = PADDLE_OFFSET;
-	playerOne.entity.y = (WIN_HEIGHT/2)-(PADDLE_HEIGHT/2);
-	playerOne.width = PADDLE_WIDTH; 
-	playerOne.height = PADDLE_HEIGHT; 
-	playerOne.speed = PADDLE_SPEED; 
+	Paddle playerOne;
+	paddleReset(&playerOne, PADDLE_OFFSET, (WIN_HEIGHT/2)-(PADDLE_HEIGHT/2), PADDLE_WIDTH, PADDLE_HEIGHT, PADDLE_SPEED, 0); 
 
 	Paddle playerTwo; 
-	playerTwo.entity.x = WIN_WIDTH - (PADDLE_OFFSET+PADDLE_WIDTH); 
-	playerTwo.entity.y = (WIN_HEIGHT/2)-(PADDLE_HEIGHT/2);
-	playerTwo.width = PADDLE_WIDTH; 
-	playerTwo.height = PADDLE_HEIGHT; 
-	playerTwo.speed = PADDLE_SPEED; 
+	paddleReset(&playerTwo, WIN_WIDTH - (PADDLE_OFFSET+PADDLE_WIDTH), (WIN_HEIGHT/2)-(PADDLE_HEIGHT/2), PADDLE_WIDTH, PADDLE_HEIGHT, PADDLE_SPEED, 0); 
 
 	// random seed based on time for the ball direction and speed
 	SetRandomSeed(time(NULL)); 
@@ -83,15 +82,43 @@ int main () {
 	// set the current scene
 	Scene currentScene = SCENE_MENU; 
 
+	// some text width veriables for centering 
+	int onePlayerWidth = MeasureText(ONE_PLAYER, FONT_SIZE);
+	int twoPlayerWidth = MeasureText(TWO_PLAYER, FONT_SIZE); 
+	int optionWidth = MeasureText(OPTIONS, FONT_SIZE);
+	int gameOverWidth = MeasureText(GAMEOVER, FONT_SIZE*3); 
+	int p1WinsWidth = MeasureText(P1_WINS, FONT_SIZE); 
+	int p2WinsWidth = MeasureText(P2_WINS, FONT_SIZE); 
+
+
 	while (!WindowShouldClose()) {
 		
 		// switch case for logic 
 		switch (currentScene) {
+			// Main menu logic
 			case SCENE_MENU: 
+				Rectangle onePlayerButton = {GetScreenWidth()/2-onePlayerWidth/2, GetScreenHeight()/2+30, onePlayerWidth, FONT_SIZE}; 
+				Rectangle twoPlayerButton = {GetScreenWidth()/2-twoPlayerWidth/2, GetScreenHeight()/2+90, twoPlayerWidth, FONT_SIZE};
+				Rectangle optionsButton = { GetScreenWidth()/2-optionWidth/2, GetScreenHeight()/2+150, optionWidth, FONT_SIZE,};
 
+				Vector2 mouse = GetMousePosition(); 
 
+				if (CheckCollisionPointRec(mouse, onePlayerButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+					currentScene = SCENE_GAMEPLAY; 
+				}
+
+				if (CheckCollisionPointRec(mouse, twoPlayerButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+					currentScene = SCENE_GAMEPLAY; 
+				}
+
+				if (CheckCollisionPointRec(mouse, optionsButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+					currentScene = SCENE_GAMEPLAY; 
+				}
+
+				
 				break; 
 
+			// Main gameplay logic
 			case SCENE_GAMEPLAY: 
 				// bind paddles to movement keys 
 				// This should be moved to options for player choice 
@@ -107,15 +134,25 @@ int main () {
 				checkScore(&ball, &playerOne, &playerTwo); 
 
 				// checks players score and switches to game over screen if one player is at a score of 3
-				// TODO working on this after scenes 
 				if (checkWin(&ball, &playerOne, &playerTwo) == 0) {
-					// restart game 
-					printf("Restart game\n");
+					currentScene = SCENE_GAMEOVER; 
 				}
 
 				break; 
 
+			// Gameover logic
 			case SCENE_GAMEOVER: 
+				if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+					currentScene = SCENE_MENU; 
+					whoWon = 0; 
+					paddleReset(&playerOne, PADDLE_OFFSET, (WIN_HEIGHT/2)-(PADDLE_HEIGHT/2), PADDLE_WIDTH, PADDLE_HEIGHT, PADDLE_SPEED, 0); 
+					paddleReset(&playerTwo, WIN_WIDTH - (PADDLE_OFFSET+PADDLE_WIDTH), (WIN_HEIGHT/2)-(PADDLE_HEIGHT/2), PADDLE_WIDTH, PADDLE_HEIGHT, PADDLE_SPEED, 0); 
+				}
+				
+				break; 
+
+			// options logic
+			case SCENE_OPTIONS:
 
 				break; 
 		}
@@ -127,22 +164,20 @@ int main () {
 
 		// switch case for drawing 
 		switch (currentScene) {
+			// Main menu drawing 
 			case SCENE_MENU: 
 				// draw title 
 				int titleWidth = MeasureText(TITLE, FONT_SIZE*3); 
 				DrawText(TITLE, GetScreenWidth()/2-titleWidth/2, GetScreenHeight()/2-200, FONT_SIZE*3, RAYWHITE); 
 
 				// draw menu: Play 2 player, play 1 player, options
-				int onePlayerWidth = MeasureText(ONE_PLAYER, FONT_SIZE);
-				int twoPlayerWidth = MeasureText(TWO_PLAYER, FONT_SIZE); 
-				int optionWidth = MeasureText(OPTIONS, FONT_SIZE);
-
-				DrawText(ONE_PLAYER, GetScreenWidth()/2-onePlayerWidth/2, GetScreenHeight()/2+20, FONT_SIZE, RAYWHITE); 
-				DrawText(TWO_PLAYER, GetScreenWidth()/2-onePlayerWidth/2, GetScreenHeight()/2+60, FONT_SIZE, RAYWHITE); 
-				DrawText(OPTIONS, GetScreenWidth()/2-optionWidth/2, GetScreenHeight()/2+100, FONT_SIZE, RAYWHITE);
+				DrawText(ONE_PLAYER, GetScreenWidth()/2-onePlayerWidth/2, GetScreenHeight()/2+30, FONT_SIZE, RAYWHITE); 
+				DrawText(TWO_PLAYER, GetScreenWidth()/2-onePlayerWidth/2, GetScreenHeight()/2+90, FONT_SIZE, RAYWHITE); 
+				DrawText(OPTIONS, GetScreenWidth()/2-optionWidth/2, GetScreenHeight()/2+150, FONT_SIZE, RAYWHITE);
 
 				break; 
 
+			// Gameplay drawing
 			case SCENE_GAMEPLAY: 
 				// Draw player one score
 				char playerOneScoreText[50]; 
@@ -168,10 +203,26 @@ int main () {
 
 				break; 
 
+			// Gameover drawing
 			case SCENE_GAMEOVER: 
+				char gameOverText[10]; 
+				DrawText(GAMEOVER, GetScreenWidth()/2-gameOverWidth/2, 100, FONT_SIZE*3, RAYWHITE); 
+
+				char winnerText[14]; 
+				if (whoWon == 1) {
+					DrawText(P1_WINS, GetScreenWidth()/2-p1WinsWidth/2, GetScreenHeight()/2 + 30, FONT_SIZE, RAYWHITE); 
+				} else if (whoWon == 2) {
+					DrawText(P2_WINS, GetScreenWidth()/2-p2WinsWidth/2, GetScreenHeight()/2 + 30, FONT_SIZE, RAYWHITE); 
+				} else {
+					printf("Error on player win check?");
+				}
 
 				break; 
 
+			// Options menu drawing 
+			case SCENE_OPTIONS: 
+
+				break; 
 		}
 
 

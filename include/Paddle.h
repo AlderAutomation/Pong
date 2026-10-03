@@ -20,6 +20,6 @@ void paddleInit(Paddle *paddle);
 void updateScore(Paddle *paddle, int score); 
 void movePaddle(Paddle *paddle, int upKey, int downKey); 
 void paddlePrintStatus(Paddle *paddle); 
-
+void paddleReset(Paddle *paddle, int x, int y, int w, int h, float speed, int score); 
 
 #endif
