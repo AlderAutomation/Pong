@@ -138,6 +138,14 @@ int main () {
 					currentScene = SCENE_GAMEOVER; 
 				}
 
+				if (checkPaddleCollision(&ball, &playerOne)) {
+					ball.speedX *= -1;  
+				}
+
+				if (checkPaddleCollision(&ball, &playerTwo)) {
+					ball.speedX *= -1; 
+				}
+
 				break; 
 
 			// Gameover logic
