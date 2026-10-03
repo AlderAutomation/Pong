@@ -90,9 +90,16 @@ int main () {
 	int p1WinsWidth = MeasureText(P1_WINS, FONT_SIZE); 
 	int p2WinsWidth = MeasureText(P2_WINS, FONT_SIZE); 
 
+	// Audio settings 
+	InitAudioDevice(); 
+	Music themeSong = LoadMusicStream("include/kontraa-water-afro-pop-music-445661.wav"); 
+	PlayMusicStream(themeSong); 
+
+
 
 	while (!WindowShouldClose()) {
-		
+		UpdateMusicStream(themeSong); 	
+
 		// switch case for logic 
 		switch (currentScene) {
 			// Main menu logic

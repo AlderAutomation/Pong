@@ -15,5 +15,17 @@ activity:
     fromListDisplayName: To-do
     toListDirectoryName: 002-Done-stock
     toListDisplayName: Done
+  - type: moved-list
+    at: 2026-10-03T22:59:38.652Z
+    fromListDirectoryName: 002-Done-stock
+    fromListDisplayName: Done
+    toListDirectoryName: 001-Doing-stock
+    toListDisplayName: Doing
+  - type: moved-list
+    at: 2026-10-03T22:59:40.164Z
+    fromListDirectoryName: 001-Doing-stock
+    fromListDisplayName: Doing
+    toListDirectoryName: 002-Done-stock
+    toListDisplayName: Done
 ---
 As in someone has won, play again or go back to main menu. 
