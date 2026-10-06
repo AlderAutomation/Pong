@@ -7,6 +7,7 @@
 #define PADDLE_H
 
 #include "Entity.h"
+#include "Ball.h"
 
 typedef struct {
 	Entity entity; 
@@ -21,5 +22,7 @@ void updateScore(Paddle *paddle, int score);
 void movePaddle(Paddle *paddle, int upKey, int downKey); 
 void paddlePrintStatus(Paddle *paddle); 
 void paddleReset(Paddle *paddle, int x, int y, int w, int h, float speed, int score); 
+bool checkPaddleCollision(Ball *ball, Paddle *paddle); 
+void checkScore(Ball *ball, Paddle *playerOne, Paddle *playerTwo); 
 
 #endif

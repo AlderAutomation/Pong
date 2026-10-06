@@ -9,7 +9,6 @@
 #include <stdbool.h>
 
 #include "Entity.h"
-#include "Paddle.h"
 
 typedef struct {
 	Entity entity; 
@@ -21,7 +20,6 @@ typedef struct {
 void ballInit(Ball *ball); 
 void moveBall(Ball *ball); 
 void bounceBall(Ball *ball); 
-void checkScore(Ball *ball, Paddle *playerOne, Paddle *playerTwo); 
-bool checkPaddleCollision(Ball *ball, Paddle *paddle); 
+
 
 #endif

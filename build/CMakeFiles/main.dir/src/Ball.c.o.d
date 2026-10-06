@@ -4,6 +4,4 @@ CMakeFiles/main.dir/src/Ball.c.o: \
  /usr/lib/gcc/x86_64-redhat-linux/16/include/stdarg.h \
  /usr/lib/gcc/x86_64-redhat-linux/16/include/stdbool.h \
  /home/picard/MyCloud/06\ -\ Code/2026/C/Ponger/include/Ball.h \
- /home/picard/MyCloud/06\ -\ Code/2026/C/Ponger/include/Entity.h \
- /home/picard/MyCloud/06\ -\ Code/2026/C/Ponger/include/Paddle.h \
- /home/picard/MyCloud/06\ -\ Code/2026/C/Ponger/include/Paddle.h
+ /home/picard/MyCloud/06\ -\ Code/2026/C/Ponger/include/Entity.h
