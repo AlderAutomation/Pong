@@ -85,7 +85,7 @@ int main () {
 	SetTargetFPS(30); 
 
 	// set the current scene, game starts in main menu 
-	Scene currentScene = SCENE_OPTIONS; 
+	Scene currentScene = SCENE_MENU; 
 
 	// Options menu variables 
 	float musicVolume = 0.3f; 
@@ -201,8 +201,6 @@ int main () {
 				// create clickable spots 
 				Rectangle musicCheckBox = {GetScreenWidth()-125, 250, FONT_SIZE, FONT_SIZE};
 				Rectangle sfxCheckBox = {GetScreenWidth()-125, 300, FONT_SIZE, FONT_SIZE};
-
-
 				Rectangle exitBox = {0, GetScreenHeight()-FONT_SIZE, 125, FONT_SIZE}; // guessed at width. Should make proper responsive var
 
 				// check for clicks 
@@ -254,7 +252,9 @@ int main () {
 				DrawText(TWO_PLAYER, GetScreenWidth()/2-onePlayerWidth/2, GetScreenHeight()/2+90, FONT_SIZE, RAYWHITE); 
 				DrawText(OPTION, GetScreenWidth()/2-optionWidth/2, GetScreenHeight()/2+150, FONT_SIZE, RAYWHITE);
 
-				// TODO draw hint text for player controls
+				// draw hint text for player controls
+				DrawText("P1 up: W down: S", 0, GetScreenHeight()-FONT_SIZE, FONT_SIZE, RAYWHITE); 
+				DrawText("P2 up: I down: J", GetScreenWidth()-250, GetScreenHeight()-FONT_SIZE, FONT_SIZE, RAYWHITE); // 250 is guess and should be changed to relative var 
 
 				break; 
 
@@ -263,12 +263,12 @@ int main () {
 				// Draw player one score
 				char playerOneScoreText[50]; 
 				snprintf(playerOneScoreText, sizeof(playerOneScoreText), "Player One Score: %d", playerOne.score);
-				DrawText(playerOneScoreText, 10, 10, 30, RAYWHITE); 
+				DrawText(playerOneScoreText, 10, 10, FONT_SIZE, RAYWHITE); 
 
 				// draw player two score 
 				char playerTwoScoreText[50]; 
 				snprintf(playerTwoScoreText, sizeof(playerTwoScoreText), "Player Two Score: %d", playerTwo.score);
-				DrawText(playerTwoScoreText, 410, 10, 30, RAYWHITE); 
+				DrawText(playerTwoScoreText, 410, 10, FONT_SIZE, RAYWHITE); 
 		
 				// draw players 
 				DrawRectangle(playerOne.entity.x, playerOne.entity.y, playerOne.width, playerOne.height, RAYWHITE); 
@@ -325,15 +325,6 @@ int main () {
 				} else {
 					DrawRectangle(GetScreenWidth()-125, 300, FONT_SIZE, FONT_SIZE, GREEN); 
 				}
-
-
-				// TODO p1 set controls 
-				DrawText("Set P1 Up Key: ", 125, 350, FONT_SIZE, RAYWHITE); 
-				DrawText("Set P1 Down Key: ", 125, 400, FONT_SIZE, RAYWHITE);
-
-				// TODO p2 set controls 
-				DrawText("Set P2 Up Key: ", 125, 450, FONT_SIZE, RAYWHITE); 
-				DrawText("Set P2 Down Key: ", 125, 500, FONT_SIZE, RAYWHITE);
 
 				// exit/back to menu button
 				DrawText("<- Main Menu", 0, GetScreenHeight()-FONT_SIZE, FONT_SIZE, RAYWHITE); 
