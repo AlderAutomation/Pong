@@ -6,5 +6,5 @@ C_DEFINES =
 
 C_INCLUDES = -I"/home/picard/MyCloud/06 - Code/2026/C/Ponger/include"
 
-C_FLAGS = -I/usr/include
+C_FLAGS = -O3 -DNDEBUG -I/usr/include
 

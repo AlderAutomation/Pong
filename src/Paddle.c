@@ -5,6 +5,7 @@
 
 #include <stdio.h>
 #include <raylib.h>
+#include <math.h>
 
 #include "Paddle.h"
 #include "Entity.h"
@@ -91,4 +92,39 @@ void checkScore(Ball *ball, Paddle *playerOne, Paddle *playerTwo) {
 		updateScore(playerOne, 1); 
 		ballInit(ball); 
 	}
+}
+
+void AIPaddle(Ball *ball, Paddle *paddle) {
+	float paddleCenter = paddle->entity.y + paddle->height / 2.0f; 
+	float difference = ball->entity.y - paddleCenter; 
+	float centerDifference = (GetScreenHeight()/2) - paddleCenter;
+
+
+	if (ball->speedX > 0) { // move to ball
+		if (fabsf(difference) > 10.0f) { // movement delay to kill jitter
+			if (difference > 0) {
+				paddle->entity.y += paddle->speed; 
+			} else {
+				paddle->entity.y -= paddle->speed; 
+			}
+		}
+	} else { // move to center
+		if (fabsf(centerDifference) > 10.0f) {
+			if (centerDifference > 0) {
+				paddle->entity.y += paddle->speed; 
+			} else {
+				paddle->entity.y -= paddle->speed; 
+			}
+		}
+	}
+
+	// window boundaries
+	if (paddle->entity.y < 50) {
+		paddle->entity.y = 50; 
+	}
+
+	if (paddle->entity.y + paddle->height > GetScreenHeight()) {
+		paddle->entity.y = GetScreenHeight()-paddle->height; 
+	}
+
 }

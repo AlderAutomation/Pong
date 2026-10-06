@@ -71,10 +71,10 @@ int main () {
 
 	// Create the paddles/players 
 	Paddle playerOne;
-	paddleReset(&playerOne, PADDLE_OFFSET, (WIN_HEIGHT/2)-(PADDLE_HEIGHT/2), PADDLE_WIDTH, PADDLE_HEIGHT, PADDLE_SPEED, 0); 
+	paddleReset(&playerOne, PADDLE_OFFSET, (GetScreenHeight()/2)-(PADDLE_HEIGHT/2), PADDLE_WIDTH, PADDLE_HEIGHT, PADDLE_SPEED, 0); 
 
 	Paddle playerTwo; 
-	paddleReset(&playerTwo, WIN_WIDTH - (PADDLE_OFFSET+PADDLE_WIDTH), (WIN_HEIGHT/2)-(PADDLE_HEIGHT/2), PADDLE_WIDTH, PADDLE_HEIGHT, PADDLE_SPEED, 0); 
+	paddleReset(&playerTwo, WIN_WIDTH - (PADDLE_OFFSET+PADDLE_WIDTH), (GetScreenHeight()/2)-(PADDLE_HEIGHT/2), PADDLE_WIDTH, PADDLE_HEIGHT, PADDLE_SPEED, 0); 
 
 	// random seed based on time for the ball direction and speed
 	SetRandomSeed(time(NULL)); 
@@ -154,7 +154,11 @@ int main () {
 				// This should be moved to options for player choice 
 				// Also this should display on screen somewhere 
 				movePaddle(&playerOne, p1UpKey, p1DownKey); 
-				movePaddle(&playerTwo, p2UpKey, p2DownKey); 
+				if (gameMode == 2) {
+					movePaddle(&playerTwo, p2UpKey, p2DownKey); 
+				} else {
+					AIPaddle(&ball, &playerTwo); 
+				}
 
 				// moves ball in chosen random directions
 				moveBall(&ball); 

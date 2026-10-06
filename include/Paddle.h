@@ -24,5 +24,6 @@ void paddlePrintStatus(Paddle *paddle);
 void paddleReset(Paddle *paddle, int x, int y, int w, int h, float speed, int score); 
 bool checkPaddleCollision(Ball *ball, Paddle *paddle); 
 void checkScore(Ball *ball, Paddle *playerOne, Paddle *playerTwo); 
+void AIPaddle(Ball *ball, Paddle *paddle); 
 
 #endif
