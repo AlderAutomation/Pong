@@ -15,7 +15,7 @@ void ballInit(Ball *ball) {
 	ball->entity.y = 300; 
 	ball->radius = 10.0; 
 
-	ball->speedX = GetRandomValue(-15, 15); 
+	ball->speedX = GetRandomValue(0, 1) ? 10 : -10; 
 	ball->speedY = GetRandomValue(-15, 15); 
 }
 

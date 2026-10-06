@@ -3,9 +3,6 @@
 //
 // lets make pong! 
 
-// need rules for how to win (first to 3)
-// single with game AI 
-
 #include <raylib.h>
 #include <stdio.h>
 #include <time.h>
@@ -23,6 +20,10 @@ typedef enum {
 	SCENE_OPTIONS
 } Scene;
 
+// global variable to say if: 
+// 0 = currently playing or in menus 
+// 1 = p1 wins 
+// 2 = p2 wins 
 int whoWon = 0; 
 
 // Check win condition and return 0 to end game or 1 to continue game 
@@ -47,18 +48,22 @@ int main () {
 	const float PADDLE_SPEED = 10.0; 
 	const int WIN_WIDTH = 800; 
 	const int WIN_HEIGHT = 600; 
+	const int FONT_SIZE = 30; 
 
 	// Const Strings 
 	const char *TITLE = "PONG!";
 	const char *ONE_PLAYER = "Start 1P Game"; 
 	const char *TWO_PLAYER = "Start 2P Game";
-	const char *OPTIONS = "Options menu";
-	const int FONT_SIZE = 30; 
+	const char *OPTION = "Options";
 	const char *GAMEOVER = "Game Over!"; 
 	const char *P1_WINS = "Player 1 wins!";
 	const char *P2_WINS = "Player 2 wins!";
 	const char *RESTART = "Click anywhere to start over."; 
 
+	// Game mode 
+	// 1 = 1 player (default)
+	// 2 = 2 player 
+	int gameMode = 1; 
 
 	// Create the ball
 	Ball ball; 
@@ -75,26 +80,39 @@ int main () {
 	SetRandomSeed(time(NULL)); 
 
 	// Create window
-	InitWindow(WIN_WIDTH, WIN_HEIGHT, "Ponger!"); 
-	// limit the FPS, otherwise dayum
+	InitWindow(WIN_WIDTH, WIN_HEIGHT, "Pong!"); 
+	// limit the FPS, otherwise its dayum fast!
 	SetTargetFPS(30); 
 
-	// set the current scene
-	Scene currentScene = SCENE_MENU; 
+	// set the current scene, game starts in main menu 
+	Scene currentScene = SCENE_OPTIONS; 
 
-	// some text width veriables for centering 
+	// Options menu variables 
+	float musicVolume = 0.3f; 
+	float sfxVolume = 1.0f; 
+	int p1UpKey = KEY_W; 
+	int p1DownKey = KEY_S; 
+	int p2UpKey = KEY_I; 
+	int p2DownKey = KEY_J; 	
+	
+	
+	// some text width veriables for text centering 
+	// Note: i want to move this up with other text variables but it breaks everything when i do. 
 	int onePlayerWidth = MeasureText(ONE_PLAYER, FONT_SIZE);
 	int twoPlayerWidth = MeasureText(TWO_PLAYER, FONT_SIZE); 
-	int optionWidth = MeasureText(OPTIONS, FONT_SIZE);
+	int optionWidth = MeasureText(OPTION, FONT_SIZE);
+	int inOptionWidth = MeasureText(OPTION, FONT_SIZE*3); 
 	int gameOverWidth = MeasureText(GAMEOVER, FONT_SIZE*3); 
 	int p1WinsWidth = MeasureText(P1_WINS, FONT_SIZE); 
-	int p2WinsWidth = MeasureText(P2_WINS, FONT_SIZE); 
+	int p2WinsWidth = MeasureText(P2_WINS, FONT_SIZE); 	
 
 	// Audio settings 
 	InitAudioDevice(); 
-	Music themeSong = LoadMusicStream("include/kontraa-water-afro-pop-music-445661.wav"); 
+	Music themeSong = LoadMusicStream("include/kontraa-water-afro-pop-music-445661.mp3"); 
+	themeSong.looping = true; 
+	SetMusicVolume(themeSong, 0.3f); 
 	PlayMusicStream(themeSong); 
-
+	Sound bounce = LoadSound("include/sumaga123-marble-440414.wav");
 
 
 	while (!WindowShouldClose()) {
@@ -104,22 +122,27 @@ int main () {
 		switch (currentScene) {
 			// Main menu logic
 			case SCENE_MENU: 
+				// Rectangles for menu options buttones 
 				Rectangle onePlayerButton = {GetScreenWidth()/2-onePlayerWidth/2, GetScreenHeight()/2+30, onePlayerWidth, FONT_SIZE}; 
 				Rectangle twoPlayerButton = {GetScreenWidth()/2-twoPlayerWidth/2, GetScreenHeight()/2+90, twoPlayerWidth, FONT_SIZE};
 				Rectangle optionsButton = { GetScreenWidth()/2-optionWidth/2, GetScreenHeight()/2+150, optionWidth, FONT_SIZE,};
 
+				// find mouse pos 
 				Vector2 mouse = GetMousePosition(); 
 
+				// check for mouse on button on left mouseclick 
 				if (CheckCollisionPointRec(mouse, onePlayerButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
 					currentScene = SCENE_GAMEPLAY; 
+					gameMode = 1; 
 				}
 
 				if (CheckCollisionPointRec(mouse, twoPlayerButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
 					currentScene = SCENE_GAMEPLAY; 
+					gameMode = 2; 
 				}
 
 				if (CheckCollisionPointRec(mouse, optionsButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
-					currentScene = SCENE_GAMEPLAY; 
+					currentScene = SCENE_OPTIONS; 
 				}
 
 				
@@ -130,8 +153,8 @@ int main () {
 				// bind paddles to movement keys 
 				// This should be moved to options for player choice 
 				// Also this should display on screen somewhere 
-				movePaddle(&playerOne, KEY_W, KEY_S); 
-				movePaddle(&playerTwo, KEY_I, KEY_J); 
+				movePaddle(&playerOne, p1UpKey, p1DownKey); 
+				movePaddle(&playerTwo, p2UpKey, p2DownKey); 
 
 				// moves ball in chosen random directions
 				moveBall(&ball); 
@@ -145,18 +168,22 @@ int main () {
 					currentScene = SCENE_GAMEOVER; 
 				}
 
+				// check for ball on paddle collision, reverse direction, and play sound 
 				if (checkPaddleCollision(&ball, &playerOne)) {
 					ball.speedX *= -1;  
+					PlaySound(bounce); 
 				}
 
 				if (checkPaddleCollision(&ball, &playerTwo)) {
 					ball.speedX *= -1; 
+					PlaySound(bounce); 
 				}
 
 				break; 
 
 			// Gameover logic
 			case SCENE_GAMEOVER: 
+				// click anywhere to restart the game back to main menu 
 				if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
 					currentScene = SCENE_MENU; 
 					whoWon = 0; 
@@ -168,6 +195,43 @@ int main () {
 
 			// options logic
 			case SCENE_OPTIONS:
+				// get mouse 
+				Vector2 optionsMouse = GetMousePosition();
+
+				// create clickable spots 
+				Rectangle musicCheckBox = {GetScreenWidth()-125, 250, FONT_SIZE, FONT_SIZE};
+				Rectangle sfxCheckBox = {GetScreenWidth()-125, 300, FONT_SIZE, FONT_SIZE};
+
+
+				Rectangle exitBox = {0, GetScreenHeight()-FONT_SIZE, 125, FONT_SIZE}; // guessed at width. Should make proper responsive var
+
+				// check for clicks 
+				// Music
+				if (CheckCollisionPointRec(optionsMouse, musicCheckBox) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+					if (musicVolume == 0.3f) {
+						musicVolume = 0.0f; 
+					} else {
+						musicVolume = 0.3f; 
+					}
+
+					SetMusicVolume(themeSong, musicVolume);
+				}
+
+				// sound effects
+				if (CheckCollisionPointRec(optionsMouse, sfxCheckBox) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+					if (sfxVolume == 1.0f) {
+						sfxVolume = 0.0f; 
+					} else {
+						sfxVolume = 1.0f; 
+					}
+
+					SetSoundVolume(bounce, sfxVolume);
+				}
+
+				// Exit button 
+				if (CheckCollisionPointRec(optionsMouse, exitBox) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+					currentScene = SCENE_MENU; 
+				}
 
 				break; 
 		}
@@ -188,7 +252,9 @@ int main () {
 				// draw menu: Play 2 player, play 1 player, options
 				DrawText(ONE_PLAYER, GetScreenWidth()/2-onePlayerWidth/2, GetScreenHeight()/2+30, FONT_SIZE, RAYWHITE); 
 				DrawText(TWO_PLAYER, GetScreenWidth()/2-onePlayerWidth/2, GetScreenHeight()/2+90, FONT_SIZE, RAYWHITE); 
-				DrawText(OPTIONS, GetScreenWidth()/2-optionWidth/2, GetScreenHeight()/2+150, FONT_SIZE, RAYWHITE);
+				DrawText(OPTION, GetScreenWidth()/2-optionWidth/2, GetScreenHeight()/2+150, FONT_SIZE, RAYWHITE);
+
+				// TODO draw hint text for player controls
 
 				break; 
 
@@ -212,7 +278,7 @@ int main () {
 				DrawCircle(ball.entity.x, ball.entity.y, ball.radius, RAYWHITE); 
 
 				// draw game lines 
-				DrawLine(0, 50, 800, 50, RAYWHITE); // horizantal to sperate score from game 
+				DrawLine(0, 50, 800, 50, RAYWHITE); // horizantal to seperate score from game 
 				DrawLine(400, 0, 400, 600, RAYWHITE); // vertical for center court
 				DrawLine(0, 599, 800, 599, RAYWHITE); // vertical to give visual bounds of court
 
@@ -220,9 +286,11 @@ int main () {
 
 			// Gameover drawing
 			case SCENE_GAMEOVER: 
+				// draw game over title 
 				char gameOverText[10]; 
 				DrawText(GAMEOVER, GetScreenWidth()/2-gameOverWidth/2, 100, FONT_SIZE*3, RAYWHITE); 
 
+				// draw who wins 
 				char winnerText[14]; 
 				if (whoWon == 1) {
 					DrawText(P1_WINS, GetScreenWidth()/2-p1WinsWidth/2, GetScreenHeight()/2 + 30, FONT_SIZE, RAYWHITE); 
@@ -232,10 +300,43 @@ int main () {
 					printf("Error on player win check?");
 				}
 
+				// draw hint text to click anywhere to restart
+				DrawText("Click anywhere to restart", 10, GetScreenHeight()-40, FONT_SIZE, RAYWHITE); 
+
 				break; 
 
 			// Options menu drawing 
 			case SCENE_OPTIONS: 
+				DrawText(OPTION, GetScreenWidth()/2-inOptionWidth/2, 100, FONT_SIZE*3, RAYWHITE); 
+
+				// music volume 
+				DrawText("Music Volume: ", 125, 250, FONT_SIZE, RAYWHITE); 
+				if (musicVolume == 0.0f) {
+					DrawRectangle(GetScreenWidth()-125, 250, FONT_SIZE, FONT_SIZE, RED); 
+				} else {
+					DrawRectangle(GetScreenWidth()-125, 250, FONT_SIZE, FONT_SIZE, GREEN); 
+				}
+
+
+				// SFX Volume 
+				DrawText("SFX Volume: ", 125, 300, FONT_SIZE, RAYWHITE); 
+				if (sfxVolume == 0.0f) {
+					DrawRectangle(GetScreenWidth()-125, 300, FONT_SIZE, FONT_SIZE, RED); 
+				} else {
+					DrawRectangle(GetScreenWidth()-125, 300, FONT_SIZE, FONT_SIZE, GREEN); 
+				}
+
+
+				// TODO p1 set controls 
+				DrawText("Set P1 Up Key: ", 125, 350, FONT_SIZE, RAYWHITE); 
+				DrawText("Set P1 Down Key: ", 125, 400, FONT_SIZE, RAYWHITE);
+
+				// TODO p2 set controls 
+				DrawText("Set P2 Up Key: ", 125, 450, FONT_SIZE, RAYWHITE); 
+				DrawText("Set P2 Down Key: ", 125, 500, FONT_SIZE, RAYWHITE);
+
+				// exit/back to menu button
+				DrawText("<- Main Menu", 0, GetScreenHeight()-FONT_SIZE, FONT_SIZE, RAYWHITE); 
 
 				break; 
 		}
@@ -244,6 +345,11 @@ int main () {
 		EndDrawing(); 
 	}
 
+	// Clean ups 
+	UnloadSound(bounce);
+	UnloadMusicStream(themeSong);
+
+	CloseAudioDevice(); 
 	CloseWindow(); 
 
 	return 0;
