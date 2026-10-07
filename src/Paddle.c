@@ -100,7 +100,7 @@ void AIPaddle(Ball *ball, Paddle *paddle) {
 	float centerDifference = (GetScreenHeight()/2) - paddleCenter;
 
 
-	if (ball->speedX > 0) { // move to ball
+	if (ball->speedX > 0 && ball->entity.x > GetScreenWidth()/2) { // track and move to the ball
 		if (fabsf(difference) > 10.0f) { // movement delay to kill jitter
 			if (difference > 0) {
 				paddle->entity.y += paddle->speed; 
