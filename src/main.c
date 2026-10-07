@@ -65,6 +65,10 @@ int main () {
 	// 2 = 2 player 
 	int gameMode = 1; 
 
+	// time tracking variables  
+	double matchStartTime; 
+	double matchElapsedTime; 
+
 	// Create the ball
 	Ball ball; 
 	ballInit(&ball); 
@@ -132,11 +136,17 @@ int main () {
 
 				// check for mouse on button on left mouseclick 
 				if (CheckCollisionPointRec(mouse, onePlayerButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+					// start timer to track elapsed time of game 
+					matchStartTime = GetTime();
+
 					currentScene = SCENE_GAMEPLAY; 
 					gameMode = 1; 
 				}
 
 				if (CheckCollisionPointRec(mouse, twoPlayerButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+					// start timer to track elapsed time of game 
+					matchStartTime = GetTime();
+
 					currentScene = SCENE_GAMEPLAY; 
 					gameMode = 2; 
 				}
@@ -151,8 +161,6 @@ int main () {
 			// Main gameplay logic
 			case SCENE_GAMEPLAY: 
 				// bind paddles to movement keys 
-				// This should be moved to options for player choice 
-				// Also this should display on screen somewhere 
 				movePaddle(&playerOne, p1UpKey, p1DownKey); 
 				if (gameMode == 2) {
 					movePaddle(&playerTwo, p2UpKey, p2DownKey); 
@@ -173,6 +181,9 @@ int main () {
 
 				// checks players score and switches to game over screen if one player is at a score of 3
 				if (checkWin(&ball, &playerOne, &playerTwo) == 0) {
+					// get elapsed time 
+					matchElapsedTime = GetTime() - matchStartTime; 
+
 					currentScene = SCENE_GAMEOVER; 
 				}
 
@@ -297,6 +308,11 @@ int main () {
 				// draw game over title 
 				char gameOverText[10]; 
 				DrawText(GAMEOVER, GetScreenWidth()/2-gameOverWidth/2, 100, FONT_SIZE*3, RAYWHITE); 
+
+				// draw elapsed time 
+				char elapsedTimeMsge[500]; 
+				snprintf(elapsedTimeMsge, sizeof(elapsedTimeMsge), "Match took: %.1f", matchElapsedTime); 
+				DrawText(elapsedTimeMsge, 0, 0, FONT_SIZE, RAYWHITE); 
 
 				// draw who wins 
 				char winnerText[14]; 
