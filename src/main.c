@@ -65,6 +65,10 @@ int main () {
 	// 2 = 2 player 
 	int gameMode = 1; 
 
+	bool isGamePaused = false; 
+
+	
+
 	// time tracking variables  
 	double matchStartTime; 
 	double matchElapsedTime; 
@@ -160,45 +164,52 @@ int main () {
 
 			// Main gameplay logic
 			case SCENE_GAMEPLAY: 
-				// bind paddles to movement keys 
-				movePaddle(&playerOne, p1UpKey, p1DownKey); 
-				if (gameMode == 2) {
-					movePaddle(&playerTwo, p2UpKey, p2DownKey); 
-				} else {
-					AIPaddle(&ball, &playerTwo); 
+				// Check for pause key 
+				if (IsKeyPressed(KEY_P)) {
+					isGamePaused = !isGamePaused; 
 				}
 
-				// moves ball in chosen random directions
-				moveBall(&ball); 
+				if (!isGamePaused) {
+					// bind paddles to movement keys 
+					movePaddle(&playerOne, p1UpKey, p1DownKey); 
+					if (gameMode == 2) {
+						movePaddle(&playerTwo, p2UpKey, p2DownKey); 
+					} else {
+						AIPaddle(&ball, &playerTwo); 
+					}
+
+					// moves ball in chosen random directions
+					moveBall(&ball); 
+					
+					// checks for horizontal confines and reverses direction
+					if (bounceBall(&ball)) {
+						PlaySound(bounce); 
+					}
 				
-				// checks for horizontal confines and reverses direction
-				if (bounceBall(&ball)) {
-					PlaySound(bounce); 
+					// Checks ball for vertical windows bound and updates appropriate players score
+					checkScore(&ball, &playerOne, &playerTwo); 
+
+					// checks players score and switches to game over screen if one player is at a score of 3
+					if (checkWin(&ball, &playerOne, &playerTwo) == 0) {
+						// get elapsed time 
+						matchElapsedTime = GetTime() - matchStartTime; 
+	
+						currentScene = SCENE_GAMEOVER; 
+					}
+
+					// check for ball on paddle collision, reverse direction, and play sound 
+					if (checkPaddleCollision(&ball, &playerOne)) {
+						ball.speedX *= -1;  
+						PlaySound(bounce); 
+					}
+
+					if (checkPaddleCollision(&ball, &playerTwo)) {
+						ball.speedX *= -1; 
+						PlaySound(bounce); 
+					}
+
+					break; 
 				}
-				
-				// Checks ball for vertical windows bound and updates appropriate players score
-				checkScore(&ball, &playerOne, &playerTwo); 
-
-				// checks players score and switches to game over screen if one player is at a score of 3
-				if (checkWin(&ball, &playerOne, &playerTwo) == 0) {
-					// get elapsed time 
-					matchElapsedTime = GetTime() - matchStartTime; 
-
-					currentScene = SCENE_GAMEOVER; 
-				}
-
-				// check for ball on paddle collision, reverse direction, and play sound 
-				if (checkPaddleCollision(&ball, &playerOne)) {
-					ball.speedX *= -1;  
-					PlaySound(bounce); 
-				}
-
-				if (checkPaddleCollision(&ball, &playerTwo)) {
-					ball.speedX *= -1; 
-					PlaySound(bounce); 
-				}
-
-				break; 
 
 			// Gameover logic
 			case SCENE_GAMEOVER: 
@@ -274,6 +285,7 @@ int main () {
 				// draw hint text for player controls
 				DrawText("P1 up: W down: S", 0, GetScreenHeight()-FONT_SIZE, FONT_SIZE, RAYWHITE); 
 				DrawText("P2 up: I down: J", GetScreenWidth()-250, GetScreenHeight()-FONT_SIZE, FONT_SIZE, RAYWHITE); // 250 is guess and should be changed to relative var 
+				DrawText("P to Pause", GetScreenWidth()/2-90, GetScreenHeight()-FONT_SIZE, FONT_SIZE, RAYWHITE); 
 
 				break; 
 

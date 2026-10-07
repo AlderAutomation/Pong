@@ -2,10 +2,10 @@
 title: Pause button
 labels:
   - label-1
-status: Doing
+status: Done
 signboard_id: oIogT
 signboard_board: Ponger
-signboard_list: Doing
+signboard_list: Done
 signboard_uri: signboard://open-card?id=oIogT
 createdAt: 2026-10-07T14:30:16.372Z
 activity:
@@ -17,4 +17,10 @@ activity:
     fromListDisplayName: To-do
     toListDirectoryName: 001-Doing-stock
     toListDisplayName: Doing
+  - type: moved-list
+    at: 2026-10-07T19:05:53.793Z
+    fromListDirectoryName: 001-Doing-stock
+    fromListDisplayName: Doing
+    toListDirectoryName: 002-Done-stock
+    toListDisplayName: Done
 ---
