@@ -15,6 +15,7 @@ CMakeFiles/main.dir/src/Entity.c.o: /home/picard/MyCloud/06\ -\ Code/2026/C/Pong
   /usr/include/bits/floatn.h \
   /usr/include/bits/libc-header-start.h \
   /usr/include/bits/long-double.h \
+  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
   /usr/include/bits/time64.h \
   /usr/include/bits/timesize.h \
@@ -56,6 +57,7 @@ CMakeFiles/main.dir/src/Paddle.c.o: /home/picard/MyCloud/06\ -\ Code/2026/C/Pong
   /usr/include/bits/mathcalls-macros.h \
   /usr/include/bits/mathcalls-narrow.h \
   /usr/include/bits/mathcalls.h \
+  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
   /usr/include/bits/time64.h \
   /usr/include/bits/timesize.h \
@@ -92,6 +94,7 @@ CMakeFiles/main.dir/src/main.c.o: /home/picard/MyCloud/06\ -\ Code/2026/C/Ponger
   /usr/include/bits/floatn.h \
   /usr/include/bits/libc-header-start.h \
   /usr/include/bits/long-double.h \
+  /usr/include/bits/stdio.h \
   /usr/include/bits/stdio_lim.h \
   /usr/include/bits/time.h \
   /usr/include/bits/time64.h \
@@ -178,7 +181,11 @@ CMakeFiles/main.dir/src/Paddle.c.o:
 
 /lib64/ld-linux-x86-64.so.2:
 
+/usr/include/time.h:
+
 /usr/include/features.h:
+
+/usr/include/bits/stdio.h:
 
 /usr/include/bits/types/struct_FILE.h:
 
@@ -200,6 +207,10 @@ CMakeFiles/main.dir/src/Ball.c.o:
 
 /usr/include/bits/time.h:
 
+/usr/include/bits/wordsize.h:
+
+/usr/include/bits/stdio_lim.h:
+
 /usr/include/stdc-predef.h:
 
 CMakeFiles/main.dir/src/Entity.c.o:
@@ -218,17 +229,9 @@ CMakeFiles/main.dir/src/Entity.c.o:
 
 /home/picard/MyCloud/06\ -\ Code/2026/C/Ponger/include/Entity.h:
 
-/usr/include/bits/wordsize.h:
-
 /usr/include/bits/types/__fpos_t.h:
 
 /usr/include/bits/math-vector.h:
-
-/usr/include/gnu/stubs.h:
-
-/usr/include/bits/iscanonical.h:
-
-/usr/include/math.h:
 
 /usr/lib/gcc/x86_64-redhat-linux/16/include/stdarg.h:
 
@@ -256,7 +259,11 @@ CMakeFiles/main.dir/src/Entity.c.o:
 
 /usr/include/bits/libc-header-start.h:
 
-/usr/include/bits/stdio_lim.h:
+/usr/include/bits/iscanonical.h:
+
+/usr/include/math.h:
+
+/usr/include/gnu/stubs.h:
 
 /usr/include/bits/mathcalls-narrow.h:
 
@@ -311,5 +318,3 @@ CMakeFiles/main.dir/src/Entity.c.o:
 /usr/include/bits/mathcalls-helper-functions.h:
 
 /usr/include/bits/types/time_t.h:
-
-/usr/include/time.h:

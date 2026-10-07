@@ -25,9 +25,12 @@ void moveBall(Ball *ball) {
 }
 
 
-void bounceBall(Ball *ball) {
+bool bounceBall(Ball *ball) {
 	if (ball->entity.y - ball->radius <= 50 || ball->entity.y + ball->radius >= GetScreenHeight()) {
 		ball->speedY *= -1; 
+		return true; 
+	} else {
+		return false; 
 	}
 }
 

@@ -1,7 +1,7 @@
 ---
 labels:
   - id: label-1
-    name: Label 1
+    name: Feature Request
     colorLight: '#22c55e'
     colorDark: '#16a34a'
   - id: label-2

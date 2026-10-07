@@ -162,8 +162,12 @@ int main () {
 
 				// moves ball in chosen random directions
 				moveBall(&ball); 
+				
 				// checks for horizontal confines and reverses direction
-				bounceBall(&ball);
+				if (bounceBall(&ball)) {
+					PlaySound(bounce); 
+				}
+				
 				// Checks ball for vertical windows bound and updates appropriate players score
 				checkScore(&ball, &playerOne, &playerTwo); 
 

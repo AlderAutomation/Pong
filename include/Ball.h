@@ -19,7 +19,7 @@ typedef struct {
 
 void ballInit(Ball *ball); 
 void moveBall(Ball *ball); 
-void bounceBall(Ball *ball); 
+bool bounceBall(Ball *ball); 
 
 
 #endif
