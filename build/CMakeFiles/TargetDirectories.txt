@@ -1,3 +1,0 @@
-/home/picard/MyCloud/06 - Code/2026/C/Ponger/build/CMakeFiles/main.dir
-/home/picard/MyCloud/06 - Code/2026/C/Ponger/build/CMakeFiles/edit_cache.dir
-/home/picard/MyCloud/06 - Code/2026/C/Ponger/build/CMakeFiles/rebuild_cache.dir

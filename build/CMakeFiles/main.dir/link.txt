@@ -1,1 +1,0 @@
-/usr/bin/cc -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/main.dir/link.d CMakeFiles/main.dir/src/main.c.o CMakeFiles/main.dir/src/Entity.c.o CMakeFiles/main.dir/src/Paddle.c.o CMakeFiles/main.dir/src/Ball.c.o -o main  /usr/lib64/libraylib.so -L/usr/lib64 -lraylib
