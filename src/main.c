@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <time.h>
 
+#include "Game.h"
 #include "Entity.h"
 #include "Paddle.h"
 #include "Ball.h"
@@ -20,24 +21,14 @@ typedef enum {
 	SCENE_OPTIONS
 } Scene;
 
-// global variable to say if: 
+
+// global variable to for which game mode player is in: 
 // 0 = currently playing or in menus 
 // 1 = p1 wins 
 // 2 = p2 wins 
 int whoWon = 0; 
 
-// Check win condition and return 0 to end game or 1 to continue game 
-int checkWin(Ball *ball, Paddle *playerOne, Paddle *playerTwo) {
-	if (playerOne->score == 3) {
-		whoWon = 1; 
-		return 0; 
-	} else if (playerTwo->score == 3) {
-		whoWon = 2; 
-		return 0; 
-	} else {
-		return 1;
-	}
-}
+
 
 int main () {
 
@@ -190,7 +181,7 @@ int main () {
 					checkScore(&ball, &playerOne, &playerTwo); 
 
 					// checks players score and switches to game over screen if one player is at a score of 3
-					if (checkWin(&ball, &playerOne, &playerTwo) == 0) {
+					if (checkWin(&playerOne, &playerTwo, &whoWon) == 0) {
 						// get elapsed time 
 						matchElapsedTime = GetTime() - matchStartTime; 
 	

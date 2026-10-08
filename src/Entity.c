@@ -1,7 +1,7 @@
 // Matthew Heltman 
 // Sept 15 
 //
-// Entity class for ball and paddle parent 
+// Entity class for ball and paddle "parent" 
 
 
 #include <stdio.h>
