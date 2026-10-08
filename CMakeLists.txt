@@ -9,7 +9,6 @@ find_package(raylib REQUIRED)
 add_executable(main 
 	src/main.c
 	src/Game.c
-    src/Entity.c
 	src/Paddle.c
 	src/Ball.c
 )

@@ -8,4 +8,4 @@ Easiest way to play is to head over to my [Ithio](https://matthewalderautomation
 
 # What I learned 
 
-SO MUCH. I learned about C basics, Raylib, compisition programming, CMake, building and releasing, and getting and acting on player feedback. 
+SO MUCH. I learned about C basics, Raylib, compisition programming, CMake, building and releasing, and getting and acting on player feedback. I think that I still use oop mentality on this porject instead of proper composition. I need more research and practise. 

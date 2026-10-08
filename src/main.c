@@ -29,7 +29,6 @@ typedef enum {
 int whoWon = 0; 
 
 
-
 int main () {
 
 	// Some core game consts
@@ -56,8 +55,8 @@ int main () {
 	// 2 = 2 player 
 	int gameMode = 1; 
 
+	// boolean for paused game. Does not pause timer and idc. 
 	bool isGamePaused = false; 
-
 
 	// time tracking variables  
 	double matchStartTime; 
@@ -153,7 +152,6 @@ int main () {
 				if (CheckCollisionPointRec(mouse, optionsButton) && IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
 					currentScene = SCENE_OPTIONS; 
 				}
-
 				
 				break; 
 
