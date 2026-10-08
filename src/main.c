@@ -65,7 +65,7 @@ int main () {
 
 	// Create the ball
 	Ball ball; 
-	ballInit(&ball); 
+	resetBallToStart(&ball); 
 
 	// Create the paddles/players 
 	Paddle playerOne;

@@ -21,12 +21,12 @@
 void checkScore(Ball *ball, Paddle *playerOne, Paddle *playerTwo) {
 	if (ball->entity.x <= 0) {
 		incrementPlayerScore(playerTwo); 
-		ballInit(ball); 
+		resetBallToStart(ball); 
 	}
 
 	if (ball->entity.x >= GetScreenWidth()) {
 		incrementPlayerScore(playerOne); 
-		ballInit(ball); 
+		resetBallToStart(ball); 
 	}
 }
 

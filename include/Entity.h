@@ -12,7 +12,4 @@ typedef struct {
 
 } Entity; 
 
-void entityInit(Entity *entity); 
-void printStatus(Entity *entity); 
-
 #endif

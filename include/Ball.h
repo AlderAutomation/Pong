@@ -17,7 +17,7 @@ typedef struct {
 	float speedY; 
 } Ball;
 
-void ballInit(Ball *ball); 
+void resetBallToStart(Ball *ball); 
 void moveBall(Ball *ball); 
 bool bounceBall(Ball *ball); 
 
