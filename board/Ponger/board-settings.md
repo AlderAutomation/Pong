@@ -12,4 +12,5 @@ labels:
     name: Label 3
     colorLight: '#ef4444'
     colorDark: '#dc2626'
+colorScheme: lavender
 ---
