@@ -4,7 +4,7 @@ Classic style Pong made with C and Raylib. Made this to expand my C and game dev
 
 # How to Play  
 
-Easiest way to play is to head over to my [Ithio](https://matthewalderautomation.itch.io/pong) page and play it in the web browser.  
+Easiest way to play is to head over to my [Itchio](https://matthewalderautomation.itch.io/pong) page and play it in the web browser.  
 
 # What I learned 
 
