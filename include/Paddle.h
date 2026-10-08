@@ -15,15 +15,11 @@ typedef struct {
 	int height; 
 	int score; 
 	float speed; 
+	int upKey; 
+	int downKey; 
 } Paddle;
 
-void paddleInit(Paddle *paddle); 
-void updateScore(Paddle *paddle, int score); 
-void movePaddle(Paddle *paddle, int upKey, int downKey); 
-void paddlePrintStatus(Paddle *paddle); 
-void paddleReset(Paddle *paddle, int x, int y, int w, int h, float speed, int score); 
-bool checkPaddleCollision(Ball *ball, Paddle *paddle); 
-void checkScore(Ball *ball, Paddle *playerOne, Paddle *playerTwo); 
-void AIPaddle(Ball *ball, Paddle *paddle); 
+void movePaddle(Paddle *paddle); 
+void paddleReset(Paddle *paddle, int x, int y); 
 
 #endif

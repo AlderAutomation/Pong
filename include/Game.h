@@ -11,5 +11,10 @@
 
 
 int checkWin(Paddle *playerOne, Paddle *playerTwo, int *whoWon); 
+void checkScore(Ball *ball, Paddle *playerOne, Paddle *playerTwo); 
+void incrementPlayerScore(Paddle *paddle); 
+bool checkPaddleCollision(Ball *ball, Paddle *paddle); 
+void AIPaddle(Ball *ball, Paddle *paddle); 
+
 
 #endif

@@ -3,34 +3,25 @@
 //
 // Paddle header file 
 
-#include <stdio.h>
+
 #include <raylib.h>
-#include <math.h>
 
 #include "Paddle.h"
 #include "Entity.h"
 
 
-void paddleInit(Paddle *paddle) {
-	paddle->width = 0; 
-	paddle->height = 0; 
-	paddle->score = 0; 
-	paddle->speed = 0.0; 
-}
-
-
-void updateScore(Paddle *paddle, int score) {
-	paddle->score = paddle->score + score; 
-}
-
-
-void movePaddle(Paddle *paddle, int upKey, int downKey) {
+/**
+ * User input to move user paddles and vertical window bounding 
+ * 
+ * @param paddle to know which player paddle to move 
+ */
+void movePaddle(Paddle *paddle) {
 	// movement 
-	if (IsKeyDown(upKey)) {
+	if (IsKeyDown(paddle->upKey)) {
 		paddle->entity.y -= paddle->speed; 
 	}
 
-	if (IsKeyDown(downKey)) {
+	if (IsKeyDown(paddle->downKey)) {
 		paddle->entity.y += paddle->speed; 
 	}
 
@@ -46,85 +37,15 @@ void movePaddle(Paddle *paddle, int upKey, int downKey) {
 }
 
 
-
-void paddlePrintStatus(Paddle *paddle) {
-	printf("POS X,Y: %i, %i\nWidth: %i\nHeight: %i\nScore: %i\n",
-			paddle->entity.x, 
-			paddle->entity.y, 
-			paddle->width, 
-			paddle->height, 
-			paddle->score); 
-}
-
-
-void paddleReset(Paddle *paddle, int x, int y, int w, int h, float speed, int score) {
+/**
+ * To reset the paddles back to begining so we can have rematches without reloading entire game 
+ * 
+ * @param paddle to distinguish which paddle to reset
+ * @param x int positional
+ * @param y int positional 
+ */
+void paddleReset(Paddle *paddle, int x, int y) {
 	paddle->entity.x = x;
 	paddle->entity.y = y;
-	paddle->width = w; 
-	paddle->height = h; 
-	paddle->speed = speed; 
-	paddle->score = score; 
-
-}
-
-
-bool checkPaddleCollision(Ball *ball, Paddle *paddle) {
-	return CheckCollisionCircleRec(
-			(Vector2){ball->entity.x, ball->entity.y}, 
-			ball->radius, 
-			(Rectangle){
-				paddle->entity.x, 
-				paddle->entity.y, 
-				paddle->width, 
-				paddle->height
-			}
-		);
-}
-
-
-void checkScore(Ball *ball, Paddle *playerOne, Paddle *playerTwo) {
-	if (ball->entity.x <= 0) {
-		updateScore(playerTwo, 1); 
-		ballInit(ball); 
-	}
-
-	if (ball->entity.x >= GetScreenWidth()) {
-		updateScore(playerOne, 1); 
-		ballInit(ball); 
-	}
-}
-
-void AIPaddle(Ball *ball, Paddle *paddle) {
-	float paddleCenter = paddle->entity.y + paddle->height / 2.0f; 
-	float difference = ball->entity.y - paddleCenter; 
-	float centerDifference = (GetScreenHeight()/2) - paddleCenter;
-
-
-	if (ball->speedX > 0 && ball->entity.x > GetScreenWidth()/2) { // track and move to the ball
-		if (fabsf(difference) > 10.0f) { // movement delay to kill jitter
-			if (difference > 0) {
-				paddle->entity.y += paddle->speed; 
-			} else {
-				paddle->entity.y -= paddle->speed; 
-			}
-		}
-	} else { // move to center
-		if (fabsf(centerDifference) > 10.0f) {
-			if (centerDifference > 0) {
-				paddle->entity.y += paddle->speed; 
-			} else {
-				paddle->entity.y -= paddle->speed; 
-			}
-		}
-	}
-
-	// window boundaries
-	if (paddle->entity.y < 50) {
-		paddle->entity.y = 50; 
-	}
-
-	if (paddle->entity.y + paddle->height > GetScreenHeight()) {
-		paddle->entity.y = GetScreenHeight()-paddle->height; 
-	}
-
+	paddle->score = 0; 
 }

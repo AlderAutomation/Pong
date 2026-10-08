@@ -58,7 +58,6 @@ int main () {
 
 	bool isGamePaused = false; 
 
-	
 
 	// time tracking variables  
 	double matchStartTime; 
@@ -70,10 +69,20 @@ int main () {
 
 	// Create the paddles/players 
 	Paddle playerOne;
-	paddleReset(&playerOne, PADDLE_OFFSET, (GetScreenHeight()/2)-(PADDLE_HEIGHT/2), PADDLE_WIDTH, PADDLE_HEIGHT, PADDLE_SPEED, 0); 
+	playerOne.upKey = KEY_W; 
+	playerOne.downKey = KEY_S; 
+	playerOne.width = PADDLE_WIDTH; 
+	playerOne.height = PADDLE_HEIGHT; 
+	playerOne.speed = PADDLE_SPEED; 
+	paddleReset(&playerOne, PADDLE_OFFSET, (GetScreenHeight()/2)-(PADDLE_HEIGHT/2)); 
 
 	Paddle playerTwo; 
-	paddleReset(&playerTwo, WIN_WIDTH - (PADDLE_OFFSET+PADDLE_WIDTH), (GetScreenHeight()/2)-(PADDLE_HEIGHT/2), PADDLE_WIDTH, PADDLE_HEIGHT, PADDLE_SPEED, 0); 
+	playerTwo.upKey = KEY_I; 
+	playerTwo.downKey = KEY_J; 
+	playerTwo.width = PADDLE_WIDTH; 
+	playerTwo.height = PADDLE_HEIGHT; 
+	playerTwo.speed = PADDLE_SPEED; 
+	paddleReset(&playerTwo, WIN_WIDTH - (PADDLE_OFFSET+PADDLE_WIDTH), (GetScreenHeight()/2)-(PADDLE_HEIGHT/2)); 
 
 	// random seed based on time for the ball direction and speed
 	SetRandomSeed(time(NULL)); 
@@ -89,11 +98,6 @@ int main () {
 	// Options menu variables 
 	float musicVolume = 0.3f; 
 	float sfxVolume = 1.0f; 
-	int p1UpKey = KEY_W; 
-	int p1DownKey = KEY_S; 
-	int p2UpKey = KEY_I; 
-	int p2DownKey = KEY_J; 	
-	
 	
 	// some text width veriables for text centering 
 	// Note: i want to move this up with other text variables but it breaks everything when i do. 
@@ -117,7 +121,7 @@ int main () {
 	while (!WindowShouldClose()) {
 		UpdateMusicStream(themeSong); 	
 
-		// switch case for logic 
+		// switch cases for logic processing 
 		switch (currentScene) {
 			// Main menu logic
 			case SCENE_MENU: 
@@ -162,9 +166,9 @@ int main () {
 
 				if (!isGamePaused) {
 					// bind paddles to movement keys 
-					movePaddle(&playerOne, p1UpKey, p1DownKey); 
+					movePaddle(&playerOne); 
 					if (gameMode == 2) {
-						movePaddle(&playerTwo, p2UpKey, p2DownKey); 
+						movePaddle(&playerTwo); 
 					} else {
 						AIPaddle(&ball, &playerTwo); 
 					}
@@ -208,8 +212,8 @@ int main () {
 				if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
 					currentScene = SCENE_MENU; 
 					whoWon = 0; 
-					paddleReset(&playerOne, PADDLE_OFFSET, (WIN_HEIGHT/2)-(PADDLE_HEIGHT/2), PADDLE_WIDTH, PADDLE_HEIGHT, PADDLE_SPEED, 0); 
-					paddleReset(&playerTwo, WIN_WIDTH - (PADDLE_OFFSET+PADDLE_WIDTH), (WIN_HEIGHT/2)-(PADDLE_HEIGHT/2), PADDLE_WIDTH, PADDLE_HEIGHT, PADDLE_SPEED, 0); 
+					paddleReset(&playerOne, PADDLE_OFFSET, (WIN_HEIGHT/2)-(PADDLE_HEIGHT/2)); 
+					paddleReset(&playerTwo, WIN_WIDTH - (PADDLE_OFFSET+PADDLE_WIDTH), (WIN_HEIGHT/2)-(PADDLE_HEIGHT/2)); 
 				}
 				
 				break; 
